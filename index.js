@@ -18,14 +18,8 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 // Specify the directory where images are stored
-const imagesDirectory = path.join(__dirname, './src/productImages');
 const PORT = process.env.PORT || 3000;
 
-app.get('/api/getImage/:imageName', (req, res) => {
-  const imageName = req.params.imageName;
-  const imagePath = path.join(__dirname, 'src', 'productImages', imageName);
-  res.sendFile(imagePath);
-});
 
 
 // Configure static file serving
@@ -38,7 +32,6 @@ app.use(cors({
   credentials: true,
 }));
 
-app.use('/api/getImage', express.static(imagesDirectory));
 
 
 
