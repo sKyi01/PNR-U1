@@ -9,8 +9,11 @@ import { format } from 'date-fns';
 import path from 'path';
 
 
-const routes = express.Router();
 
+
+const routes = express.Router();
+const __filename = new URL(import.meta.url).pathname;
+const __dirname = path.dirname(__filename);
 // Multer setup for file uploads
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
