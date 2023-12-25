@@ -17,8 +17,12 @@ const __dirname = path.dirname(__filename);
 
 
 const app = express();
+// Specify the directory where images are stored
+const imagesDirectory = path.join(__dirname, './src/productImages');
 const PORT = process.env.PORT || 3000;
 
+// Configure static file serving
+app.use('/productImages', express.static(imagesDirectory));
 app.use(cors());
 app.use(bodyParser.json());
 app.use('/api/admin/product', ProductRouter);
@@ -27,6 +31,10 @@ app.use(cors({
   origin: 'https://pnr.onrender.com',
   credentials: true,
 }));
+
+
+
+
 
 mongoose
   .connect(process.env.DB_CONNECTION_URL, {
