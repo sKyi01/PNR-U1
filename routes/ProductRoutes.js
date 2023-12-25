@@ -6,16 +6,19 @@ import Product from "../models/Product.js";
 import Order from "../models/orderSchema.js";
 import nodemailer from "nodemailer";
 import { format } from 'date-fns';
+import path from 'path';
+
 
 const routes = express.Router();
 
 // Multer setup for file uploads
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "./src/productImages"); // Specify the destination folder for uploaded files
+    const destinationPath = path.join(__dirname, '..', 'src', 'productImages');
+    cb(null, destinationPath);
   },
   filename: function (req, file, cb) {
-    cb(null, Date.now() + "_" + file.originalname); // Use a unique filename for each uploaded file
+    cb(null, Date.now() + '_' + file.originalname);
   },
 });
 

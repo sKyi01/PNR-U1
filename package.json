@@ -11,13 +11,13 @@
         "dev": "vite",
         "build": "vite build",
         "start": "node index.js"
-       
     },
     "dependencies": {
         "@coreui/react": "^5.0.0-alpha.3",
         "@fortawesome/fontawesome-free": "^6.5.1",
         "@fortawesome/free-solid-svg-icons": "^6.4.2",
         "@fortawesome/react-fontawesome": "^0.2.0",
+        "@google-cloud/storage": "^7.7.0",
         "@syncfusion/ej2-react-grids": "^23.1.40",
         "axios": "^1.6.2",
         "body-parser": "^1.20.2",

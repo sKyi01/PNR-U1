@@ -77,7 +77,7 @@ function product() {
                   <div
                     className="h-[60%] w-full rounded-t-xl"
                     style={{
-                      backgroundImage: `url(../src/productImages/${product.productImage[0]})`,
+                      backgroundImage: `url(/api/getImage/${product.productImage[0]})`,
                       backgroundSize: "cover",
                       backgroundPosition: "center",
                       borderTopLeftRadius: "5px",

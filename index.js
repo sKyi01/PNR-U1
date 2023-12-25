@@ -21,16 +21,24 @@ const app = express();
 const imagesDirectory = path.join(__dirname, './src/productImages');
 const PORT = process.env.PORT || 3000;
 
+app.get('/api/getImage/:imageName', (req, res) => {
+  const imageName = req.params.imageName;
+  const imagePath = path.join(__dirname, 'src', 'productImages', imageName);
+  res.sendFile(imagePath);
+});
+
 // Configure static file serving
-app.use('/productImages', express.static(imagesDirectory));
 app.use(cors());
 app.use(bodyParser.json());
 app.use('/api/admin/product', ProductRouter);
 app.use('/', express.static('dist'))
 app.use(cors({
-  origin: 'https://pnr.onrender.com',
+  origin: process.env.CORS_ORIGIN || 'http://localhost:3000',
   credentials: true,
 }));
+
+app.use('/api/getImage', express.static(imagesDirectory));
+
 
 
 
