@@ -1,0 +1,63 @@
+{
+    "name": "merge-skoda",
+    "private": true,
+    "homepage": "https://pnr.onrender.com",
+    "version": "0.0.0",
+    "type": "module",
+    "workspaces": [
+        "SkodaDecorsApi"
+    ],
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "start": "node index.js"
+       
+    },
+    "dependencies": {
+        "@coreui/react": "^5.0.0-alpha.3",
+        "@fortawesome/fontawesome-free": "^6.5.1",
+        "@fortawesome/free-solid-svg-icons": "^6.4.2",
+        "@fortawesome/react-fontawesome": "^0.2.0",
+        "@syncfusion/ej2-react-grids": "^23.1.40",
+        "axios": "^1.6.2",
+        "body-parser": "^1.20.2",
+        "bootstrap": "^5.3.2",
+        "cors": "^2.8.5",
+        "date-fns": "^2.30.0",
+        "dotenv": "^16.3.1",
+        "express": "^4.18.2",
+        "font-awesome": "^4.7.0",
+        "mongoose": "^8.0.2",
+        "multer": "^1.4.5-lts.1",
+        "nodemailer": "^6.9.7",
+        "nodemon": "^3.0.2",
+        "path": "^0.12.7",
+        "promises": "^0.2.5",
+        "react": "^18.2.0",
+        "react-accessible-accordion": "^5.0.0",
+        "react-multi-carousel": "^2.8.4",
+        "react-parallax": "^3.5.1",
+        "react-responsive-carousel": "^3.2.23",
+        "react-scroll": "^1.9.0",
+        "react-select": "^5.8.0",
+        "react-toastify": "^9.1.3",
+        "reactstrap": "^9.2.1",
+        "styled-components": "^6.1.0",
+        "swiper": "^10.3.1"
+    },
+    "devDependencies": {
+        "@types/react": "^18.2.15",
+        "@types/react-dom": "^18.2.7",
+        "@vitejs/plugin-react": "^4.0.3",
+        "autoprefixer": "^10.4.16",
+        "concurrently": "^7.0.0",
+        "eslint": "^8.45.0",
+        "eslint-plugin-react": "^7.32.2",
+        "eslint-plugin-react-hooks": "^4.6.0",
+        "eslint-plugin-react-refresh": "^0.4.3",
+        "postcss": "^8.4.31",
+        "react-router-dom": "^6.16.0",
+        "tailwindcss": "^3.3.3",
+        "vite": "^4.4.5"
+    }
+}

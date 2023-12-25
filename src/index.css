@@ -1,0 +1,265 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Brush Script MT";
+  src: url("./ts/fonts/BRUSHSCI.ttf");
+}
+
+.bursh-font {
+  font-family: "Brush Script MT";
+}
+
+body,
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.home {
+  background: url("./assets/image.png");
+  background-size: cover;
+}
+
+.explore {
+  /* background: rgb(255, 203, 170);
+  background: radial-gradient(
+    circle,
+    rgb(255, 255, 255) 0%,
+    rgba(255, 204, 170, 1) 200%,
+    rgb(255, 204, 170) 300%
+  ); */
+}
+
+.explore-img {
+  background-image: url("./assets/layer.svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.bg-img-india {
+  background-image: url("./assets/india.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.bg-img-andaman {
+  background-image: url("./assets/andaman.avif");
+  background-position: center;
+  background-size: cover;
+}
+
+.bg-img-kenya {
+  background-image: url("https://static.toiimg.com/thumb/86468337/Kenya.jpg?width=1200&height=900");
+  background-position: center;
+  background-size: cover;
+}
+
+.bg-img-lakshadweep {
+  background-image: url("https://cdn.shopify.com/s/files/1/0514/1921/8087/files/typesofwoodport3.jpg?v=1667808067");
+  background-position: center;
+  background-size: cover;
+}
+
+.bg-map {
+  background-image: url("./assets/psr/bg.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-reviews::before {
+  position: absolute;
+  content: "";
+  width: 100vw;
+  height: 100vh;
+
+  background-image: url("./assets/bgreviews.svg");
+  background-size: cover;
+  opacity: 0.5;
+
+  z-index: -1;
+}
+
+#background-video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: fill;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+@media (max-width: 768px) {
+  #background-video {
+    object-fit: cover;
+  }
+}
+
+.india-font {
+  font-size: 400px;
+  -webkit-text-fill-color: rgba(
+    255,
+    255,
+    255,
+    0
+  ); /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 5px;
+  -webkit-text-stroke-color: rgb(255, 255, 255);
+  letter-spacing: 3rem;
+}
+.india-font-1 {
+  font-size: 100px;
+  -webkit-text-fill-color: rgba(
+    255,
+    255,
+    255,
+    0
+  ); /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(0, 0, 0);
+  letter-spacing: 10px;
+}
+.text-with-space {
+  word-spacing: 10px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+/* CSS for ScrollToTopButton.js */
+.scroll-to-top-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.scroll-to-top-button.visible {
+  display: block;
+}
+
+/* text with space 0 for mobile screens */
+@media (max-width: 768px) {
+  .text-with-space {
+    word-spacing: 0px;
+  }
+}
+.text-with-space-1 {
+  word-spacing: 5px;
+}
+
+@media (max-width: 768px) {
+  .text-with-space-1 {
+    word-spacing: 0px;
+  }
+}
+
+/* Reviews.css */
+
+.custom-carousel .carousel-control-prev-icon,
+.custom-carousel .carousel-control-next-icon {
+  background-color: red; /* Change to your desired color */
+}
+
+.custom-carousel .carousel-indicators .active {
+  background-color: green; /* Change to your desired color */
+}
+
+.custom-carousel .carousel-indicators li {
+  background-color: blue; /* Change to your desired color */
+}
+
+.custom-carousel .carousel-control-prev,
+.custom-carousel .carousel-control-next {
+  color: white; /* Change to your desired color */
+}
+.about1 {
+  background-image: url("./assets/aboutsection1.png");
+  background-size: cover;
+}
+
+.about2 {
+  position: relative;
+  background-image: url("./assets/timbers.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 0;
+}
+
+.about2::before {
+  z-index: 0;
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.4
+  ); /* Adjust the alpha value for the desired level of black overlay */
+}
+
+.blacklayer {
+  position: relative;
+  background-image: url("./assets/timbers.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 0;
+}
+
+.blacklayer::before {
+  z-index: 0;
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.4
+  ); /* Adjust the alpha value for the desired level of black overlay */
+}
+.bg-img-homep1 {
+  background-image: url("../src/assets/woodendoor.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.bg-img-homep2 {
+  background-image: url("https://i.pinimg.com/1200x/eb/77/53/eb7753f6f7fc800af6db5364d56437eb.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.bg-img-homep3 {
+  background-image: url("https://alcovestudio.in/wp-content/uploads/Wooden-Jaali-4.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.bg-img-lakshadweep {
+  background-image: url("https://cdn.shopify.com/s/files/1/0514/1921/8087/files/typesofwoodport3.jpg?v=1667808067");
+  background-position: center;
+  background-size: cover;
+}

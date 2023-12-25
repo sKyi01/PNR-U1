@@ -1,0 +1,131 @@
+@font-face {
+  font-family: "Brush Script MT";
+  src: url("../src/assets/fonts/brush script mt kursiv.ttf");
+}
+
+.link-style {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit the color from the parent */
+}
+
+.link-style:hover {
+  color: black; /* Set the desired hover color */
+  text-decoration: none; /* Add underline on hover if desired */
+}
+/* Add this CSS for hover effect */
+.small-image:hover {
+   /* Change border color as needed */
+}
+
+/* Optional: Add a transition for a smoother effect */
+.small-image {
+  transition: border 0.3s ease;
+}
+
+/* Optional: Add a cursor pointer on hover */
+.hover-pointer {
+  cursor: pointer;
+}
+
+/* Add these styles to your productCard.css file */
+
+/* Small images */
+.small-image {
+  transition: transform 0.3s ease-in-out;
+}
+
+.small-image:hover {
+  transform: scale(1.1);
+}
+
+/* Main image */
+.main-image {
+  transition: transform 0.3s ease-in-out;
+}
+
+.main-image:hover {
+  transform: scale(1.1);
+}
+
+/* Make the container responsive and adjust based on the size of the main image */
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px; /* Adjust as needed */
+}
+
+@media (min-width: 768px) {
+  .card-container {
+    flex-direction: row;
+  }
+
+  .col-md-2 {
+    max-width: 15%; /* Adjust as needed */
+  }
+
+  .col-md-5 {
+    max-width: 60%; /* Adjust as needed */
+  }
+}
+
+/* Add this to your existing styles or create a new CSS file */
+.purchase-button-container {
+  margin-top: 20px; /* Adjust the margin as needed */
+}
+
+
+.font-casual-scripts {
+  font-family: 'Casual Scripts', cursive;
+}
+.font-brush-script-mt {
+  font-family: 'Brush Script MT', cursive;
+}
+.bursh-font {
+  font-family: "Brush Script MT";
+}
+
+
+/* WhatsAppButton.css */
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.whatsapp-button img {
+  width: 70px; /* Adjust the size as needed */
+  height: 70px; /* Adjust the size as needed */
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  margin-right: 15px;
+
+  margin-bottom: 15px;
+}
+
+.whatsapp-button img:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .whatsapp-button {
+    bottom: 2%;
+    right: 2%;
+  }
+
+  .whatsapp-button img {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.position{
+  z-index: -1;
+}
+
+.ctnr{
+ 
+  
+}
