@@ -27,6 +27,7 @@ app.get('/api/getImage/:imageName', (req, res) => {
   res.sendFile(imagePath);
 });
 
+
 // Configure static file serving
 app.use(cors());
 app.use(bodyParser.json());
