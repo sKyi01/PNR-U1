@@ -13,7 +13,7 @@ import { format } from 'date-fns';
 const routes = express.Router();
 
 const projectId="formal-air-409311";
-const keyFileName="mykey.json"
+const keyFileName=GOOGLE_APPLICATION_CREDENTIALS;
 
 // Initialize Google Cloud Storage
 const storage = new Storage({
