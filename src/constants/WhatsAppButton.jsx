@@ -11,7 +11,7 @@ const WhatsAppButton = () => {
       target="_blank"
       rel="noopener noreferrer"
     >
-      <img src="../src/assets/whatsapp.png" alt="WhatsApp" />
+      <img src="../dist/assets/whatsapp.png" alt="WhatsApp" />
     </a>
   </div>
   
