@@ -1,39 +1,35 @@
 // ProductRoutes.js
-
 import express from "express";
 import multer from "multer";
+import { Storage } from "@google-cloud/storage";
 import Product from "../models/Product.js";
 import Order from "../models/orderSchema.js";
 import nodemailer from "nodemailer";
 import { format } from 'date-fns';
 
+// Set the environment variable for Google Cloud Storage
+process.env.GOOGLE_APPLICATION_CREDENTIALS = "../mykey.json";
+
 const routes = express.Router();
 
-// Multer setup for file uploads
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "./src/assets"); // Specify the destination folder for uploaded files
-  },
-  filename: function (req, file, cb) {
-    cb(null, Date.now() + "_" + file.originalname); // Use a unique filename for each uploaded file
+// Initialize Google Cloud Storage
+const storage = new Storage();
+const bucket = storage.bucket("pnr-vercel"); // Replace with your actual bucket name
+
+const upload = multer({
+  storage: multer.memoryStorage(), // Store file in memory for processing
+  fileFilter: (req, file, cb) => {
+    const allowedFileTypes = ["image/jpeg", "image/jpg", "image/png"];
+    if (allowedFileTypes.includes(file.mimetype)) {
+      cb(null, true);
+    } else {
+      cb(
+        new Error("Invalid file type. Only JPEG, JPG, and PNG are allowed."),
+        false
+      );
+    }
   },
 });
-
-// File type filter function
-const fileFilter = (req, file, cb) => {
-  const allowedFileTypes = ["image/jpeg", "image/jpg", "image/png", "image/PNG", "image/JPG", "image/JPEG"];
-
-  if (allowedFileTypes.includes(file.mimetype)) {
-    cb(null, true);
-  } else {
-    cb(
-      new Error("Invalid file type. Only JPEG, JPG, and PNG are allowed."),
-      false
-    );
-  }
-};
-
-const upload = multer({ storage: storage, fileFilter: fileFilter });
 
 routes.get("/getAllProduct", async (req, res) => {
   try {
@@ -45,46 +41,64 @@ routes.get("/getAllProduct", async (req, res) => {
   }
 });
 
-// ... other routes
+routes.post("/createProduct", upload.array("productImage", 5), async (req, res) => {
+  console.log("request is coming for create");
 
-routes.post(
-  "/createProduct",
-  upload.array("productImage", 5),
-  async (req, res) => {
-    console.log("request is coming for create");
+  const username = req.body.username;
+  const password = req.body.password;
+  console.log(username + " " + password);
 
-    const username = req.body.username;
-    const password = req.body.password;
-    console.log(username + " " + password);
+  try {
+    if (username === "akash" && password === "sky") {
+      console.log("request is coming for create with condition");
 
-    try {
-      if (username === "akash" && password === "sky") {
-        console.log("request is coming for create with condition");
+      const newProduct = new Product(req.body);
 
-        const newProduct = new Product(req.body);
+      // If there are uploaded files, store them in Google Cloud Storage
+      if (req.files) {
+        const filePromises = req.files.map(async (file, i) => {
+          try {
+          const fileName = Date.now() + "_" + file.originalname;
+          const fileBuffer = file.buffer;
 
-        // If there are uploaded files, store their filenames in the existing array
-        if (req.files) {
-          // Assuming 'productImage' is the field name in the FormData for multiple images
-          req.files.forEach((file, i) => {
-            if (i < newProduct.productImage.length) {
-              newProduct.productImage[i] = file.filename;
-            } else {
-              newProduct.productImage.push(file.filename);
-            }
+          const fileUpload = bucket.file(fileName);
+          const stream = fileUpload.createWriteStream({
+            metadata: {
+              contentType: file.mimetype,
+            },
           });
-        }
 
-        const createdProduct = await newProduct.save();
-        res.json(createdProduct);
-      } else {
-        res.status(403).json({ message: "Unauthorized" });
+          stream.end(fileBuffer);
+
+          await new Promise((resolve, reject) => {
+            stream.on("finish", resolve);
+            stream.on("error", reject);
+          });
+
+          // Replace the productImage array with the uploaded file URLs
+          if (i < newProduct.productImage.length) {
+            newProduct.productImage[i] = `https://storage.googleapis.com/${bucket.name}/${fileName}`;
+          } else {
+            newProduct.productImage.push(`https://storage.googleapis.com/${bucket.name}/${fileName}`);
+          }
+        } catch (error) {
+          console.error("Error processing file:", error);
+          // You might want to handle or log this error as needed
+        }
+        });
+
+        await Promise.all(filePromises);
       }
-    } catch (error) {
-      res.status(500).json({ message: "Internal Server Error", error });
+
+      const createdProduct = await newProduct.save();
+      res.json(createdProduct);
+    } else {
+      res.status(403).json({ message: "Unauthorized" });
     }
+  } catch (error) {
+    res.status(500).json({ message: "Internal Server Error", error });
   }
-);
+});
 
 routes.delete("/deleteProduct/:productId", async (req, res) => {
   const id = req.params.productId;
