@@ -11,6 +11,8 @@ import { format } from 'date-fns';
 
 
 const routes = express.Router();
+process.env.GOOGLE_APPLICATION_CREDENTIALS ;
+
 
 // Initialize Google Cloud Storage
 const storage = new Storage();
