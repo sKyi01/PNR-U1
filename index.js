@@ -20,6 +20,7 @@ const app = express();
 // Specify the directory where images are stored
 const PORT = process.env.PORT || 3000;
 
+// Set the environment variable for Google Cloud Storage
 
 
 // Configure static file serving
@@ -31,6 +32,8 @@ app.use(cors({
   origin: process.env.CORS_ORIGIN || 'http://localhost:3000',
   credentials: true,
 }));
+process.env.GOOGLE_APPLICATION_CREDENTIALS ;
+
 
 
 
