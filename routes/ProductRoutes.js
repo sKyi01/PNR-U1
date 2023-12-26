@@ -11,11 +11,14 @@ import { format } from 'date-fns';
 
 
 const routes = express.Router();
-process.env.GOOGLE_APPLICATION_CREDENTIALS ;
+
+const keyFilePath = process.env.GOOGLE_APPLICATION_CREDENTIALS ;
 
 
 // Initialize Google Cloud Storage
-const storage = new Storage();
+const storage = new Storage({
+  keyFilename: keyFilePath,
+});
 const bucket = storage.bucket("pnr-vercel"); // Replace with your actual bucket name
 
 const upload = multer({
