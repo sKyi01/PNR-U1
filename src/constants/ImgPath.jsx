@@ -1,2 +1,2 @@
-const imgPath = "../src/assets";
+const imgPath = "../assets";
 export default imgPath;
