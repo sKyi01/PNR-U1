@@ -2,6 +2,7 @@
 import React from 'react';
 
 import "../css/globalcss.css"
+import wmg from '../assets/whatsapp.png'
 
 const WhatsAppButton = () => {
   return (
@@ -11,7 +12,7 @@ const WhatsAppButton = () => {
       target="_blank"
       rel="noopener noreferrer"
     >
-      <img src="../dist/assets/whatsapp.png" alt="WhatsApp" />
+      <img src={wmg} alt="WhatsApp" />
     </a>
   </div>
   
