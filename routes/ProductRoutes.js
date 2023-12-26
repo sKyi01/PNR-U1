@@ -12,12 +12,13 @@ import { format } from 'date-fns';
 
 const routes = express.Router();
 
-const keyFilePath = process.env.GOOGLE_APPLICATION_CREDENTIALS ;
-
+const projectId="formal-air-409311";
+const keyFileName="mykey.json"
 
 // Initialize Google Cloud Storage
 const storage = new Storage({
-  keyFilename: keyFilePath,
+   projectId,
+   keyFileName,
 });
 const bucket = storage.bucket("pnr-vercel"); // Replace with your actual bucket name
 
