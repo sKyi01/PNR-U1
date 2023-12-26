@@ -6,9 +6,10 @@ import Product from "../models/Product.js";
 import Order from "../models/orderSchema.js";
 import nodemailer from "nodemailer";
 import { format } from 'date-fns';
+import key from '../mykey.json';
 
 // Set the environment variable for Google Cloud Storage
-process.env.GOOGLE_APPLICATION_CREDENTIALS = "../mykey.json";
+process.env.GOOGLE_APPLICATION_CREDENTIALS = `${key}`;
 
 const routes = express.Router();
 
