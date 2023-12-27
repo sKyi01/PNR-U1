@@ -79,7 +79,7 @@ function product() {
                   <div
                     className="h-[60%] w-full rounded-t-xl"
                     style={{
-                      backgroundImage: `url(${gcp_url}/${product.productImage[0]})`,
+                      backgroundImage: `url(https://storage.googleapis.com/pnr-vercel/${product.productImage[0]})`,
                       backgroundSize: "cover",
                       backgroundPosition: "center",
                       borderTopLeftRadius: "5px",
