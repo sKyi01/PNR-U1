@@ -5,23 +5,19 @@ import { Storage } from "@google-cloud/storage";
 import Product from "./models/Product.js";
 import Order from "./models/orderSchema.js";
 import nodemailer from "nodemailer";
-import { format } from 'date-fns-tz';
-
+import { format } from "date-fns-tz";
 
 //import keyFile from "file:///opt/render/project/src/mykey.json" assert { type: "json" };
 
-
-
 const routes = express.Router();
 
-const projectId= process.env.PROJECT_ID;
-const keyFileName= process.env.KEYFILENAME;
-
+const projectId = process.env.PROJECT_ID;
+const keyFileName = process.env.KEYFILENAME;
 
 // Initialize Google Cloud Storage
 const storage = new Storage({
-   projectId,
-   keyFileName,
+  projectId,
+  keyFileName,
 });
 const bucket = storage.bucket("pnr-vercel"); // Replace with your actual bucket name
 
@@ -50,20 +46,94 @@ routes.get("/getAllProduct", async (req, res) => {
   }
 });
 
-routes.post('/createProduct', upload.array('productImage', 5), async (req, res) => {
-  console.log('request is coming for create');
+routes.post(
+  "/createProduct",
+  upload.array("productImage", 5),
+  async (req, res) => {
+    console.log("request is coming for create");
 
+    const username = req.body.username;
+    const password = req.body.password;
+    console.log(username + " " + password);
+
+    try {
+      if (username === "akash" && password === "sky") {
+        console.log("request is coming for create with condition");
+
+        const newProduct = new Product(req.body);
+
+        // If there are uploaded files, store them in Google Cloud Storage
+        if (req.files) {
+          const filePromises = req.files.map(async (file) => {
+            try {
+              const fileName = Date.now() + "_" + file.originalname;
+              const fileBuffer = file.buffer;
+
+              const fileUpload = bucket.file(fileName);
+              const stream = fileUpload.createWriteStream({
+                metadata: {
+                  contentType: file.mimetype,
+                },
+              });
+
+              stream.end(fileBuffer);
+
+              await new Promise((resolve, reject) => {
+                stream.on("finish", resolve);
+                stream.on("error", reject);
+              });
+
+              // Append the uploaded file URL to the productImage array
+              newProduct.productImage.push(
+                `https://storage.googleapis.com/${bucket.name}/${fileName}`
+              );
+            } catch (error) {
+              console.error("Error processing file:", error);
+              // You might want to handle or log this error as needed
+            }
+          });
+
+          await Promise.all(filePromises);
+        }
+
+        const createdProduct = await newProduct.save();
+        res.json(createdProduct);
+      } else {
+        res.status(403).json({ message: "Unauthorized" });
+      }
+    } catch (error) {
+      console.error("Error creating product:", error);
+      res.status(500).json({ message: "Internal Server Error", error });
+    }
+  }
+);
+
+routes.delete("/deleteProduct/:productId", async (req, res) => {
+  const id = req.params.productId;
+  try {
+    const remove = await Product.findByIdAndDelete(id);
+    res.json(remove);
+  } catch (error) {
+    res.json(error);
+  }
+});
+
+routes.put('/updateProduct/:productId', upload.array('productImage', 5), async (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
-  console.log(username + ' ' + password);
+  const id = req.params.productId;
 
   try {
     if (username === 'akash' && password === 'sky') {
-      console.log('request is coming for create with condition');
+      const existingProduct = await Product.findById(id);
+      if (!existingProduct) {
+        return res.status(404).json({ message: 'Product not found' });
+      }
 
-      const newProduct = new Product(req.body);
+      // Completely replace existing data with new data from req.body
+      existingProduct.set(req.body);
 
-      // If there are uploaded files, store them in Google Cloud Storage
+      // Update product image if new ones are provided
       if (req.files) {
         const filePromises = req.files.map(async (file) => {
           try {
@@ -85,7 +155,7 @@ routes.post('/createProduct', upload.array('productImage', 5), async (req, res) 
             });
 
             // Append the uploaded file URL to the productImage array
-            newProduct.productImage.push(`https://storage.googleapis.com/${bucket.name}/${fileName}`);
+            existingProduct.productImage.push(`https://storage.googleapis.com/${bucket.name}/${fileName}`);
           } catch (error) {
             console.error('Error processing file:', error);
             // You might want to handle or log this error as needed
@@ -95,72 +165,16 @@ routes.post('/createProduct', upload.array('productImage', 5), async (req, res) 
         await Promise.all(filePromises);
       }
 
-      const createdProduct = await newProduct.save();
-      res.json(createdProduct);
+      const updatedProduct = await existingProduct.save();
+      res.json(updatedProduct);
     } else {
-      res.status(403).json({ message: 'Unauthorized' });
+      res.status(401).json({ message: 'Unauthorized' });
     }
   } catch (error) {
-    console.error('Error creating product:', error);
-    res.status(500).json({ message: 'Internal Server Error', error });
+    console.error('Error updating product:', error);
+    res.status(500).json({ message: 'Internal Server Error', error: error.message });
   }
 });
-
-
-routes.delete("/deleteProduct/:productId", async (req, res) => {
-  const id = req.params.productId;
-  try {
-    const remove = await Product.findByIdAndDelete(id);
-    res.json(remove);
-  } catch (error) {
-    res.json(error);
-  }
-});
-
-routes.put(
-  "/updateProduct/:productId",
-  upload.array("productImage", 5),
-  async (req, res) => {
-    const username = req.body.username;
-    const password = req.body.password;
-    const id = req.params.productId;
-
-    try {
-      if (username === "akash" && password === "sky") {
-        const existingProduct = await Product.findById(id);
-        if (!existingProduct) {
-          return res.status(404).json({ message: "Product not found" });
-        }
-
-        // Completely replace existing data with new data from req.body
-        existingProduct.set(req.body);
-
-        // Update product image if new ones are provided
-        if (req.files) {
-          // Assuming 'productImage' is the field name in the FormData for multiple images
-          for (let i = 0; i < req.files.length; i++) {
-            // Check if the current index is within the bounds of the existing array
-            if (i < existingProduct.productImage.length) {
-              existingProduct.productImage[i] = req.files[i].filename;
-            } else {
-              // If the existing array is not long enough, push the new filename
-              existingProduct.productImage.push(req.files[i].filename);
-            }
-          }
-        }
-
-        const updatedProduct = await existingProduct.save();
-        res.json(updatedProduct);
-      } else {
-        res.status(401).json({ message: "Unauthorized" });
-      }
-    } catch (error) {
-      res
-        .status(500)
-        .json({ message: "Internal Server Error", error: error.message });
-    }
-  }
-);
 
 routes.get("/getProduct/:productId", async (req, res) => {
   const id = req.params.productId;
@@ -179,8 +193,7 @@ routes.post("/submit-order", async (req, res) => {
   console.log(req.body);
 
   const formData = req.body;
-  const orderDate = format(new Date(), 'dd/MM/yyyy HH:mm');
-
+  const orderDate = format(new Date(), "dd/MM/yyyy HH:mm");
 
   try {
     const transporter = nodemailer.createTransport({
@@ -239,14 +252,12 @@ routes.get("/getOrders", async (req, res) => {
   }
 });
 
-
 routes.post("/submit-inquiry", async (req, res) => {
   console.log("request coming to the Email...");
   console.log(req.body);
 
   const formData = req.body;
-  const inquiryDate = format(new Date(), 'dd/MM/yyyy HH:mm');
-
+  const inquiryDate = format(new Date(), "dd/MM/yyyy HH:mm");
 
   try {
     const transporter = nodemailer.createTransport({
@@ -279,8 +290,6 @@ routes.post("/submit-inquiry", async (req, res) => {
 
     const info = await transporter.sendMail(mailOptions);
     console.log("Email sent:", info.response);
-
-   
 
     res.status(200).send("Order submitted successfully!");
   } catch (error) {
