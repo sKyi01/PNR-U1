@@ -3,7 +3,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
-import ProductRouter from './routes/ProductRoutes.js'; // Note the .js extension
+import ProductRouter from './ProductRoutes.js'; // Note the .js extension
 import cors from 'cors';
 import dotenv from 'dotenv';
 import nodemailer from 'nodemailer';

@@ -12,8 +12,9 @@ import { format } from 'date-fns';
 
 const routes = express.Router();
 
-const projectId="formal-air-409311";
-const keyFileName="mykey.json"
+const projectId= process.env.PROJECT_ID;
+const keyFileName= process.env.KEYFILENAME;
+
 
 // Initialize Google Cloud Storage
 const storage = new Storage({
