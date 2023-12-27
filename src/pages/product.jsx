@@ -76,16 +76,14 @@ function product() {
                   className="link-style"
                   style={{ flex: "1", overflow: "hidden" }}
                 >
-                  <div
-                    className="h-[60%] w-full rounded-t-xl"
-                    style={{
-                      backgroundImage: `${product.productImage[0]})`,
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                      borderTopLeftRadius: "5px",
-                      borderTopRightRadius: "5px",
-                    }}
-                  />
+                <div className="h-[60%] w-full rounded-t-xl">
+                <img
+                  src={product.productImage[0]}
+                  alt="Product Image"
+                  className="w-full h-full object-cover rounded-t-xl"
+                />
+              </div>
+              
                   <div className="flex flex-col p-12 gap-7" style={{ overflow: "hidden" }}>
                     <h5 className="font-bold font-adanda text-2xl overflow-hidden">
                       {product.productTitle}
