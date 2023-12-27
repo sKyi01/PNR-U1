@@ -13,6 +13,7 @@ import StaticCards from "./StaticCards";
 import "../css/globalcss.css";
 import Layout from "../constants/Layout";
 import imgPath from "../constants/ImgPath";
+import gcp_url from "../constants/GcpPath";
 
 function product() {
   const [products, setProducts] = useState([]);
@@ -78,7 +79,7 @@ function product() {
                   <div
                     className="h-[60%] w-full rounded-t-xl"
                     style={{
-                      backgroundImage: `url(${imgPath}/${product.productImage[0]})`,
+                      backgroundImage: `url(${gcp_url}/${product.productImage[0]})`,
                       backgroundSize: "cover",
                       backgroundPosition: "center",
                       borderTopLeftRadius: "5px",
