@@ -62,7 +62,7 @@ const Cart = () => {
               <div className="card flex-md-row flex-sm-column ">
                 {/* Left side - Image */}
                 <img
-                  src={`../src/productImages/${product.productImage[0]}`}
+                  src={`${product.productImage[0]}`}
                   alt={product.productTitle}
                   className="card-img-left img-fluid"
                   style={{ width: "400px", height: "400px", objectFit: "cover" }}

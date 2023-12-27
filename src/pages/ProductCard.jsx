@@ -75,7 +75,7 @@ const ProductCard = () => {
                   >
                     <img
                       style={{ width: '150px', height: '150px' }}
-                      src={`https://storage.googleapis.com/pnr-vercel/${image}`}
+                      src={`${image}`}
                       className='img-fluid rounded mt-2 hover-pointer'
                       alt={`Image ${index + 1}`}
                       
@@ -89,7 +89,7 @@ const ProductCard = () => {
                 {product.productImage && product.productImage.length > 0 && (
                   <img
                     style={{ width: '100%', height: '100%', objectFit: 'contain' }}
-                    src={`https://storage.googleapis.com/pnr-vercel/${product.productImage[selectedImage]}`}
+                    src={`${product.productImage[selectedImage]}`}
                     className='img-fluid rounded main-image'
                     alt='Main Image'
                   />
