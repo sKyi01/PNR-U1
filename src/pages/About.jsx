@@ -1,5 +1,5 @@
 import { useState } from "react";
-import logo from "../assets/psr/logopsr.png";
+import logo from "../assets/PNR/logopsr.png";
 import line1 from "../assets/line1.png";
 import line from "../assets/line.svg";
 import { Parallax } from "react-parallax";
@@ -180,7 +180,7 @@ function Section1() {
   return (
     <section className="py-16 bg-white">
       <h4 className="font-alfa text-2xl md:text-5xl text-center text-[#B45F06]">
-        We Are PSR Woods and gallery
+        We Are PNR Woods and gallery
       </h4>
       <div className="flex md:flex-row flex-col gap-4 justify-around py-12">
         <div className="flex flex-col items-center">
@@ -345,7 +345,7 @@ function Reviews() {
 
   let title = {
     para: [
-      "PSR Woods and Timbers stands as more than just a timber and wood shop. We transcend traditional labels – we're not solely a supplier, but a destination for craftsmanship and quality. Much like a curator of stories etched in timber grains, we blend expertise and efficiency. Beyond mere timber offerings, we're a holistic destination management hub for all your wood needs. Whether it's the artistry of woodwork or the finesse in timber selection, we specialize in catering to diverse needs, elevating each project with unparalleled dedication."
+      "PNR Woods and Timbers stands as more than just a timber and wood shop. We transcend traditional labels – we're not solely a supplier, but a destination for craftsmanship and quality. Much like a curator of stories etched in timber grains, we blend expertise and efficiency. Beyond mere timber offerings, we're a holistic destination management hub for all your wood needs. Whether it's the artistry of woodwork or the finesse in timber selection, we specialize in catering to diverse needs, elevating each project with unparalleled dedication."
     ],
     sub: [],
     last: [],
@@ -354,7 +354,7 @@ function Reviews() {
   if (activePackage === 2) {
     title = {
       para: [
-        "At PSR Woods and Timbers, we curate an unmatched experience in the world of timber and woodcraft. Our services go beyond mere transactions; we specialize in:"
+        "At PNR Woods and Timbers, we curate an unmatched experience in the world of timber and woodcraft. Our services go beyond mere transactions; we specialize in:"
       ],
       sub: [
         " Premium Timber Selection: We meticulously source the finest timber, ensuring top-notch quality for your projects, be it crafting furniture, building structures, or artistic creations.",
@@ -364,7 +364,7 @@ function Reviews() {
         " Destination for Creativity: Step into our world; we're not just a shop but an immersive experience. Explore possibilities, ignite creativity, and delve into the endless potential of wood in our space.",
       ],
       last: [
-        "At PSR Woods and Timbers, we redefine the traditional wood shop experience, offering a blend of expertise, creativity, and a passion for all things wood. "
+        "At PNR Woods and Timbers, we redefine the traditional wood shop experience, offering a blend of expertise, creativity, and a passion for all things wood. "
         
       ],
     };

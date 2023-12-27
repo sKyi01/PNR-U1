@@ -62,7 +62,7 @@ export default function App() {
                 <Route path="/thankyouCard" element={<ThankYouCard />} />
                 <Route path="/orderSubmitted" element={<OrderSubmitted />} />
 
-                <Route path="/admin" element={<Admin />} />
+                <Route path="/admin/ed95016e28f7b01278b04b29c86e3680559ac0a53c707b4fbdd62f37da5017a8" element={<Admin />} />
                 <Route path="/Product" element={<Product />} />
                 <Route path="/services" element={<Services />} />
                 <Route path="/gallery" element={<Gallery />} />

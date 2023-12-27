@@ -1,4 +1,4 @@
-import planeloading from "../assets/psr/furniture.gif";
+import planeloading from "../assets/PNR/furniture.gif";
 
 function Loading() {
   return (

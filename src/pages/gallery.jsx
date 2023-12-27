@@ -1,9 +1,9 @@
 import { useState } from "react";
-import logo from "../assets/psr/logopsr.png";
+import logo from "../assets/PNR/logopsr.png";
 import line from "../assets/line.svg";
 import { Parallax } from "react-parallax";
 import { Link } from "react-router-dom";
-import indiabg from "../assets/psr/foest_psr.jpg";
+import indiabg from "../assets/PNR/foest_psr.jpg";
 import "../css/globalcss.css"
 
 function India() {

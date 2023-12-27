@@ -5,7 +5,9 @@ import { Storage } from "@google-cloud/storage";
 import Product from "./models/Product.js";
 import Order from "./models/orderSchema.js";
 import nodemailer from "nodemailer";
-import { format } from 'date-fns';
+import { format } from 'date-fns-tz';
+
+
 //import keyFile from "file:///opt/render/project/src/mykey.json" assert { type: "json" };
 
 
@@ -179,8 +181,9 @@ routes.post("/submit-order", async (req, res) => {
   console.log(req.body);
 
   const formData = req.body;
-  const orderDate = format(new Date(), 'dd/MM/yyyy HH:mm');
 
+  // Set the time zone to Indian Standard Time (Asia/Kolkata)
+  const orderDate = format(new Date(), 'dd/MM/yyyy HH:mm', { timeZone: 'Asia/Kolkata' });
 
   try {
     const transporter = nodemailer.createTransport({
@@ -210,21 +213,22 @@ routes.post("/submit-order", async (req, res) => {
         Ship to Different Address: ${
           formData.shipToDifferentAddress ? "Yes" : "No"
         }
+        Order Date: ${orderDate}
       `,
     };
 
-    const info = await transporter.sendMail(mailOptions);
-    console.log("Email sent:", info.response);
-
-    const newOrder = new Order({
-      ...formData,
-      orderAt: orderDate, // Save the formatted order date
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        console.error(error);
+        res.status(500).send("Internal Server Error");
+      } else {
+        console.log('Email sent: ' + info.response);
+        res.status(200).send("Order submitted successfully");
+      }
     });
-    await newOrder.save();
 
-    res.status(200).send("Order submitted successfully!");
   } catch (error) {
-    console.error("Error processing order:", error);
+    console.error(error);
     res.status(500).send("Internal Server Error");
   }
 });

@@ -1,6 +1,6 @@
-import logo from "../assets/psr/logopsr.png";
+import logo from "../assets/PNR/logopsr.png";
 import line from "../assets/line.svg";
-import work from "../assets/psr/wood11.svg";
+import work from "../assets/PNR/wood11.svg";
 import img3 from "../assets/woodwork.jpg";
 import img1 from "../assets/treehome.jpg";
 import img2 from "../assets/working.jpg";
@@ -390,7 +390,7 @@ function Services() {
                 </h6>
                 <p className="text-center text-xl ">
                   Effortless access to quality wood and furniture worldwide –
-                  book with ease through PSR Wood and furnish your dreams
+                  book with ease through PNR Wood and furnish your dreams
                   effortlessly.
                 </p>
               </div>
@@ -404,7 +404,7 @@ function Services() {
                 </h6>
                 <p className="text-center text-xl">
                   Experience top-quality wood and exquisite furniture crafted
-                  for every weather, now available worldwide through PSR Wood.{" "}
+                  for every weather, now available worldwide through PNR Wood.{" "}
                 </p>
               </div>
             </div>

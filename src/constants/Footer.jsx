@@ -1,4 +1,4 @@
-import logo from "../assets/psr/logopsr.png";
+import logo from "../assets/PNR/logopsr.png";
 import { Link } from "react-router-dom";
 
 function Footer() {
@@ -12,7 +12,7 @@ function Footer() {
         </div>
         <div className="flex flex-col justify-between basis-[20%] gap-15">
           <p className="text-left">
-          PSR Woods and Timbers stands as more than just a timber and wood shop. We transcend traditional labels – 
+          PNR Woods and Timbers stands as more than just a timber and wood shop. We transcend traditional labels – 
           we're not solely a supplier, but a destination for craftsmanship and quality. Much like a curator of stories etched in 
           timber grains, we blend expertise and efficiency. 
 
@@ -81,7 +81,7 @@ function Footer() {
         
       </div>
       <div className="text-center font-recursive py-2">
-      <p>© 2023 PSR Woods | All Rights Reserved. </p>
+      <p>© 2023 PNR Woods | All Rights Reserved. </p>
       </div>
     </div>
   );

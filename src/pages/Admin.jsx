@@ -10,6 +10,7 @@ const Admin = () => {
   const [orders,setOrders]=useState([]);
   const [productListVisible, setProductListVisible] = useState(false);
   const [orderListVisible, setOrderListVisible] = useState(false); // New state
+  const [loading, setLoading] = useState(false);
 
 
   const [updateProduct, setUpdateProduct] = useState({
@@ -81,6 +82,9 @@ const Admin = () => {
 
   const handleForm = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    
+
     const formData = new FormData();
   
     for (const key in product) {
@@ -103,6 +107,9 @@ const Admin = () => {
     } catch (error) {
       console.error("Failed to add product:", error);
       toast.error("Failed to add product", { position: "bottom-center" });
+    }
+    finally {
+      setLoading(false);
     }
   };
   
@@ -170,6 +177,8 @@ const Admin = () => {
 
   const handleUpdateSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+
     const formData = new FormData();
   
     for (const key in updateProduct) {
@@ -196,6 +205,9 @@ const Admin = () => {
     } catch (error) {
       console.error("Failed to update product:", error);
       toast.error("Failed to update product", { position: "bottom-center" });
+    }
+    finally {
+      setLoading(false);
     }
   };
   
