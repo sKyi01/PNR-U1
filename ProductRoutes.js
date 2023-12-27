@@ -118,7 +118,7 @@ routes.delete("/deleteProduct/:productId", async (req, res) => {
   }
 });
 
-app.put('/updateProduct/:productId', upload.array('productImage', 5), async (req, res) => {
+routes.put('/updateProduct/:productId', upload.array('productImage', 5), async (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
   const id = req.params.productId;
@@ -134,7 +134,7 @@ app.put('/updateProduct/:productId', upload.array('productImage', 5), async (req
       existingProduct.set(req.body);
 
       // Update product image with the new ones if provided
-      if (req.files) {
+      if (req.files && req.files.length > 0) {
         // Clear the existing productImage array
         existingProduct.productImage = [];
 
@@ -178,6 +178,7 @@ app.put('/updateProduct/:productId', upload.array('productImage', 5), async (req
     res.status(500).json({ message: 'Internal Server Error', error: error.message });
   }
 });
+
 
 routes.get("/getProduct/:productId", async (req, res) => {
   const id = req.params.productId;
