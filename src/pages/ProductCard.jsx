@@ -11,6 +11,7 @@ import { faShoppingBag } from '@fortawesome/free-solid-svg-icons';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import {Link} from 'react-router-dom'
+import gcp_url from '../constants/GcpPath';
 
 const ProductCard = () => {
   const { productId } = useParams();
@@ -74,7 +75,7 @@ const ProductCard = () => {
                   >
                     <img
                       style={{ width: '150px', height: '150px' }}
-                      src={`../src/productImages/${image}`}
+                      src={`${gcp_url}/${image}`}
                       className='img-fluid rounded mt-2 hover-pointer'
                       alt={`Image ${index + 1}`}
                       
@@ -88,7 +89,7 @@ const ProductCard = () => {
                 {product.productImage && product.productImage.length > 0 && (
                   <img
                     style={{ width: '100%', height: '100%', objectFit: 'contain' }}
-                    src={`../src/productImages/${product.productImage[selectedImage]}`}
+                    src={`${gcp_url}/${product.productImage[selectedImage]}`}
                     className='img-fluid rounded main-image'
                     alt='Main Image'
                   />
