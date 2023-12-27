@@ -133,7 +133,10 @@ routes.put('/updateProduct/:productId', upload.array('productImage', 5), async (
       // Completely replace existing data with new data from req.body
       existingProduct.set(req.body);
 
-      // Update product image if new ones are provided
+      // Clear the existing productImage array
+      existingProduct.productImage = [];
+
+      // Update product image with the new ones if provided
       if (req.files) {
         const filePromises = req.files.map(async (file) => {
           try {
