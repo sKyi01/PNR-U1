@@ -2,8 +2,8 @@
 import express from "express";
 import multer from "multer";
 import { Storage } from "@google-cloud/storage";
-import Product from "../models/Product.js";
-import Order from "../models/orderSchema.js";
+import Product from "./models/Product.js";
+import Order from "./models/orderSchema.js";
 import nodemailer from "nodemailer";
 import { format } from 'date-fns';
 //import keyFile from "file:///opt/render/project/src/mykey.json" assert { type: "json" };
