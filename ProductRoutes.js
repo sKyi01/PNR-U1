@@ -50,50 +50,46 @@ routes.get("/getAllProduct", async (req, res) => {
   }
 });
 
-routes.post("/createProduct", upload.array("productImage", 5), async (req, res) => {
-  console.log("request is coming for create");
+routes.post('/createProduct', upload.array('productImage', 5), async (req, res) => {
+  console.log('request is coming for create');
 
   const username = req.body.username;
   const password = req.body.password;
-  console.log(username + " " + password);
+  console.log(username + ' ' + password);
 
   try {
-    if (username === "akash" && password === "sky") {
-      console.log("request is coming for create with condition");
+    if (username === 'akash' && password === 'sky') {
+      console.log('request is coming for create with condition');
 
       const newProduct = new Product(req.body);
 
       // If there are uploaded files, store them in Google Cloud Storage
       if (req.files) {
-        const filePromises = req.files.map(async (file, i) => {
+        const filePromises = req.files.map(async (file) => {
           try {
-          const fileName = Date.now() + "_" + file.originalname;
-          const fileBuffer = file.buffer;
+            const fileName = Date.now() + '_' + file.originalname;
+            const fileBuffer = file.buffer;
 
-          const fileUpload = bucket.file(fileName);
-          const stream = fileUpload.createWriteStream({
-            metadata: {
-              contentType: file.mimetype,
-            },
-          });
+            const fileUpload = bucket.file(fileName);
+            const stream = fileUpload.createWriteStream({
+              metadata: {
+                contentType: file.mimetype,
+              },
+            });
 
-          stream.end(fileBuffer);
+            stream.end(fileBuffer);
 
-          await new Promise((resolve, reject) => {
-            stream.on("finish", resolve);
-            stream.on("error", reject);
-          });
+            await new Promise((resolve, reject) => {
+              stream.on('finish', resolve);
+              stream.on('error', reject);
+            });
 
-          // Replace the productImage array with the uploaded file URLs
-          if (i < newProduct.productImage.length) {
-            newProduct.productImage[i] = `https://storage.googleapis.com/${bucket.name}/${fileName}`;
-          } else {
+            // Append the uploaded file URL to the productImage array
             newProduct.productImage.push(`https://storage.googleapis.com/${bucket.name}/${fileName}`);
+          } catch (error) {
+            console.error('Error processing file:', error);
+            // You might want to handle or log this error as needed
           }
-        } catch (error) {
-          console.error("Error processing file:", error);
-          // You might want to handle or log this error as needed
-        }
         });
 
         await Promise.all(filePromises);
@@ -102,12 +98,14 @@ routes.post("/createProduct", upload.array("productImage", 5), async (req, res) 
       const createdProduct = await newProduct.save();
       res.json(createdProduct);
     } else {
-      res.status(403).json({ message: "Unauthorized" });
+      res.status(403).json({ message: 'Unauthorized' });
     }
   } catch (error) {
-    res.status(500).json({ message: "Internal Server Error", error });
+    console.error('Error creating product:', error);
+    res.status(500).json({ message: 'Internal Server Error', error });
   }
 });
+
 
 routes.delete("/deleteProduct/:productId", async (req, res) => {
   const id = req.params.productId;
@@ -181,9 +179,8 @@ routes.post("/submit-order", async (req, res) => {
   console.log(req.body);
 
   const formData = req.body;
+  const orderDate = format(new Date(), 'dd/MM/yyyy HH:mm');
 
-  // Set the time zone to Indian Standard Time (Asia/Kolkata)
-  const orderDate = format(new Date(), 'dd/MM/yyyy HH:mm', { timeZone: 'Asia/Kolkata' });
 
   try {
     const transporter = nodemailer.createTransport({
@@ -213,22 +210,21 @@ routes.post("/submit-order", async (req, res) => {
         Ship to Different Address: ${
           formData.shipToDifferentAddress ? "Yes" : "No"
         }
-        Order Date: ${orderDate}
       `,
     };
 
-    transporter.sendMail(mailOptions, (error, info) => {
-      if (error) {
-        console.error(error);
-        res.status(500).send("Internal Server Error");
-      } else {
-        console.log('Email sent: ' + info.response);
-        res.status(200).send("Order submitted successfully");
-      }
-    });
+    const info = await transporter.sendMail(mailOptions);
+    console.log("Email sent:", info.response);
 
+    const newOrder = new Order({
+      ...formData,
+      orderAt: orderDate, // Save the formatted order date
+    });
+    await newOrder.save();
+
+    res.status(200).send("Order submitted successfully!");
   } catch (error) {
-    console.error(error);
+    console.error("Error processing order:", error);
     res.status(500).send("Internal Server Error");
   }
 });

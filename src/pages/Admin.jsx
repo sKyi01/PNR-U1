@@ -368,8 +368,12 @@ const Admin = () => {
         </div>
 
         <div className="text-center mt-4 mb-4">
-          <button type="submit" className="btn btn-primary bg-primary">
-            Add Product
+          <button type="submit" className="btn btn-primary bg-primary" disabled={loading}>
+
+          
+          {loading ? 'Adding...' : 'Add Product'}
+        
+            
           </button>
         </div>
       </form>
@@ -665,8 +669,10 @@ const Admin = () => {
             </div>
 
             <div className="text-center mt-4 mb-4">
-              <button type="submit" className="btn btn-primary bg-primary mr-2">
-                Update
+              <button type="submit" className="btn btn-primary bg-primary mr-2" disabled={loading}>
+              {loading ? 'Updating...' : 'Update'}
+
+                
               </button>
               <button
                 type="button"
