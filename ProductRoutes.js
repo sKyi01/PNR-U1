@@ -118,7 +118,7 @@ routes.delete("/deleteProduct/:productId", async (req, res) => {
   }
 });
 
-routes.put('/updateProduct/:productId', upload.array('productImage', 5), async (req, res) => {
+app.put('/updateProduct/:productId', upload.array('productImage', 5), async (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
   const id = req.params.productId;
@@ -133,11 +133,11 @@ routes.put('/updateProduct/:productId', upload.array('productImage', 5), async (
       // Completely replace existing data with new data from req.body
       existingProduct.set(req.body);
 
-      // Clear the existing productImage array
-      existingProduct.productImage = [];
-
       // Update product image with the new ones if provided
       if (req.files) {
+        // Clear the existing productImage array
+        existingProduct.productImage = [];
+
         const filePromises = req.files.map(async (file) => {
           try {
             const fileName = Date.now() + '_' + file.originalname;
