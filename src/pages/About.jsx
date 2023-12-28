@@ -210,19 +210,19 @@ function Section2() {
       <div className="md:flex hidden w-full justify-center gap-4 z-10">
         <p className="text-2xl font-noticia tracking-[3px]">India</p>
         <p className="text-2xl font-noticia tracking-[3px] px-4 border-x border-white">
-        India
+        
         </p>
         <p className="text-2xl font-noticia tracking-[3px] px-4 border-r border-white">
-        India
+        
         </p>
         <p className="text-2xl font-noticia tracking-[3px] px-4 border-r border-white">
-          INDIA
+          
         </p>
         <p className="text-2xl font-noticia tracking-[3px] px-4 border-r border-white">
-        India
+        
         </p>
         <p className="text-2xl font-noticia tracking-[3px] px-4 ">
-        India
+        
         </p>
       </div>
 

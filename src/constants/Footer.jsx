@@ -57,7 +57,7 @@ function Footer() {
             <h6 className="font-bold text-xl">Meet Us </h6> 
             
             <div className="flex flex-col text-lg gap-3">
-            <p>Kajahussain AR PNR WOOD INDUSTRIES PALAKKAD 678012<br/>  </p>
+            <p>PNR WOOD INDUSTRIES PALAKKAD 678012<br/>  </p>
 
               <a href="tel:+917012862639">+91 7012862639 <br/> (24/7, 365 days) </a>
               <a href="mailto:pnrwood82@gmail.com">pnrwood82@gmail.com</a>
@@ -67,7 +67,7 @@ function Footer() {
         <div className="md:hidden flex flex-col gap-6">
           <h6 className="font-bold text-xl">Meet Us</h6>
           <div className="flex flex-col text-lg gap-3">
-          <a href="#">Kajahussain AR PNR WOOD INDUSTRIES PALAKKAD 678012<br/>  </a>
+          <a href="#">PNR WOOD INDUSTRIES PALAKKAD 678012<br/>  </a>
 
           <a href="tel:+917012862639">+91 7012862639 <br/> (24/7, 365 days) </a>
           <a href="mailto:pnrwood82@gmail.com">pnrwood82@gmail.com</a>
