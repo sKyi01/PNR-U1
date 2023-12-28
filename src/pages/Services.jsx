@@ -5,51 +5,60 @@ import line from "../assets/line.svg";
 import { Parallax } from "react-parallax";
 import { Link } from "react-router-dom";
 import Footer from "../constants/Footer";
+import wooden_flooring from "../assets/wooden_flooring.jpg";
+import wooden_staircase from "../assets/Wooden_staircase.jpg";
 
 const destinationsData = [
   {
     title: "Wooden Flooring",
     description:
-      "Discover the timeless allure of our wooden flooring, meticulously curated to infuse your space with natural elegance. Crafted from premium hardwoods, each plank embodies exquisite craftsmanship and durability, celebrating the unique beauty of wood grains. With a diverse selection spanning classic oak, inviting cherry, and opulent maple, our collection caters to diverse tastes and styles. Embrace enduring sophistication that withstands the demands of daily life, whether adorning a cozy home or a bustling commercial environment. Not only does our flooring promise timeless appeal, but it also boasts ease of maintenance, offering a practical solution without compromising on its innate charm.",
+      "Crafting bespoke wooden staircases that combine functionality and aesthetics. Our company specializes in creating custom staircases tailored to individual preferences and space requirements. From traditional to contemporary designs, our skilled craftsmen use high-quality wood to construct durable and visually stunning staircases, adding a touch of elegance to any home or commercial space.",
+
     imageUrl:
-      "https://media.istockphoto.com/id/905636222/photo/seamless-wood-floor-texture-hardwood-floor-texture-wooden-parquet.webp?b=1&s=170667a&w=0&k=20&c=evK4dMPGtWF5TLzRzvEzo907SO71OriDTp7EH3VLrYE=",
+      {wooden_flooring},
   },
   {
-    title: "Wooden Flooring",
+    title: "Wooden Staircase",
     description:
       "Discover the timeless allure of our wooden flooring, meticulously curated to infuse your space with natural elegance. Crafted from premium hardwoods, each plank embodies exquisite craftsmanship and durability, celebrating the unique beauty of wood grains. With a diverse selection spanning classic oak, inviting cherry, and opulent maple, our collection caters to diverse tastes and styles. Embrace enduring sophistication that withstands the demands of daily life, whether adorning a cozy home or a bustling commercial environment. Not only does our flooring promise timeless appeal, but it also boasts ease of maintenance, offering a practical solution without compromising on its innate charm.",
     imageUrl:
-      "https://media.istockphoto.com/id/905636222/photo/seamless-wood-floor-texture-hardwood-floor-texture-wooden-parquet.webp?b=1&s=170667a&w=0&k=20&c=evK4dMPGtWF5TLzRzvEzo907SO71OriDTp7EH3VLrYE=",
+    {wooden_staircase},
   },
   {
-    title: "Wooden Flooring",
+    title: "Custom Wood Furniture",
     description:
-      "Discover the timeless allure of our wooden flooring, meticulously curated to infuse your space with natural elegance. Crafted from premium hardwoods, each plank embodies exquisite craftsmanship and durability, celebrating the unique beauty of wood grains. With a diverse selection spanning classic oak, inviting cherry, and opulent maple, our collection caters to diverse tastes and styles. Embrace enduring sophistication that withstands the demands of daily life, whether adorning a cozy home or a bustling commercial environment. Not only does our flooring promise timeless appeal, but it also boasts ease of maintenance, offering a practical solution without compromising on its innate charm.",
+      "We pride ourselves on handcrafting unique and custom wood furniture pieces. Our skilled artisans create bespoke furniture tailored to specific design preferences and space requirements. Using premium quality wood and exquisite craftsmanship, we offer a wide range of custom tables, chairs, cabinets, and more, ensuring each piece is a blend of artistry and functionality.",
     imageUrl:
-      "https://media.istockphoto.com/id/905636222/photo/seamless-wood-floor-texture-hardwood-floor-texture-wooden-parquet.webp?b=1&s=170667a&w=0&k=20&c=evK4dMPGtWF5TLzRzvEzo907SO71OriDTp7EH3VLrYE=",
+      "https://shagunarts.com/media/wysiwyg/custome-furniture.jpg",
   },
   {
-    title: "Wooden Flooring",
+    title: "Wooden Wall Paneling",
     description:
-      "Discover the timeless allure of our wooden flooring, meticulously curated to infuse your space with natural elegance. Crafted from premium hardwoods, each plank embodies exquisite craftsmanship and durability, celebrating the unique beauty of wood grains. With a diverse selection spanning classic oak, inviting cherry, and opulent maple, our collection caters to diverse tastes and styles. Embrace enduring sophistication that withstands the demands of daily life, whether adorning a cozy home or a bustling commercial environment. Not only does our flooring promise timeless appeal, but it also boasts ease of maintenance, offering a practical solution without compromising on its innate charm.",
+      "Revitalize interiors with our wooden wall paneling services. We offer an array of decorative and functional wood panels that add warmth and texture to any space. From intricate designs to sleek modern finishes, our paneling options cater to diverse design preferences, providing both visual appeal and insulation benefits.",
     imageUrl:
-      "https://media.istockphoto.com/id/905636222/photo/seamless-wood-floor-texture-hardwood-floor-texture-wooden-parquet.webp?b=1&s=170667a&w=0&k=20&c=evK4dMPGtWF5TLzRzvEzo907SO71OriDTp7EH3VLrYE=",
+      "https://housing.com/news/wp-content/uploads/2022/11/wooden-panel-for-wall-compressed.jpg",
   },
   {
-    title: "Wooden Flooring",
+    title: "Wood Carving",
     description:
-      "Discover the timeless allure of our wooden flooring, meticulously curated to infuse your space with natural elegance. Crafted from premium hardwoods, each plank embodies exquisite craftsmanship and durability, celebrating the unique beauty of wood grains. With a diverse selection spanning classic oak, inviting cherry, and opulent maple, our collection caters to diverse tastes and styles. Embrace enduring sophistication that withstands the demands of daily life, whether adorning a cozy home or a bustling commercial environment. Not only does our flooring promise timeless appeal, but it also boasts ease of maintenance, offering a practical solution without compromising on its innate charm.",
+      "Delve into the timeless artistry of wooden carving, where craftsmanship meets imagination. Our skilled artisans meticulously sculpt intricate designs and patterns, breathing life into wood. From ornate details on furniture to personalized accents, each piece embodies the dedication and precision of our carving expertise. Experience the allure of meticulously crafted wooden creations that evoke elegance and individuality.",
     imageUrl:
-      "https://media.istockphoto.com/id/905636222/photo/seamless-wood-floor-texture-hardwood-floor-texture-wooden-parquet.webp?b=1&s=170667a&w=0&k=20&c=evK4dMPGtWF5TLzRzvEzo907SO71OriDTp7EH3VLrYE=",
+      "https://thumbs.dreamstime.com/b/engraving-wood-17104950.jpg",
   },
   {
-    title: "Wooden Flooring",
+    title: "Wooden Beams and Structural Elements",
     description:
-      "Discover the timeless allure of our wooden flooring, meticulously curated to infuse your space with natural elegance. Crafted from premium hardwoods, each plank embodies exquisite craftsmanship and durability, celebrating the unique beauty of wood grains. With a diverse selection spanning classic oak, inviting cherry, and opulent maple, our collection caters to diverse tastes and styles. Embrace enduring sophistication that withstands the demands of daily life, whether adorning a cozy home or a bustling commercial environment. Not only does our flooring promise timeless appeal, but it also boasts ease of maintenance, offering a practical solution without compromising on its innate charm.",
+      "Provide structural strength and visual appeal with our wooden beams and structural elements. Our company supplies high-quality wood beams and components for architectural and construction purposes. From exposed beams in residential spaces to structural elements in commercial buildings, we offer durable and aesthetically pleasing wooden solutions.",
     imageUrl:
-      "https://media.istockphoto.com/id/905636222/photo/seamless-wood-floor-texture-hardwood-floor-texture-wooden-parquet.webp?b=1&s=170667a&w=0&k=20&c=evK4dMPGtWF5TLzRzvEzo907SO71OriDTp7EH3VLrYE=",
+      "https://www.constructiondb.com/wp-content/uploads/2023/03/pexels-ron-lach-8829869-1024x682.jpg",
   },
-  
+  {
+    title: "Wood Restoration and Refinishing",
+    description:
+      "Restore the beauty of aged or worn-out wooden surfaces with our restoration and refinishing services. Our team specializes in refurbishing old furniture, floors, and fixtures. Through sanding, staining, and refinishing techniques, we breathe new life into wood, preserving its natural beauty while ensuring longevity and enhanced aesthetics",
+    imageUrl:
+      "https://aaronstouchup.com/wp-content/uploads/2017/10/atu-furniture-refinishing-dining-room.png",
+  },
 ];
 
 function Services() {
@@ -97,14 +106,14 @@ function Header() {
         </Link>
 
         <div className="flex gap-24 font-bold text-xl text-black ">
-        <Link to="/">HOME</Link>
-              <Link to="/about">ABOUT US</Link>
-              <Link to="/product">OUR PRODUCTS</Link>
-              <Link to="/services">OUR SERVICES</Link>
-              <Link to="/gallery">TIMBERS</Link>
-              <Link to="/cart" className="text-black">
-              View Cart
-            </Link>
+          <Link to="/">HOME</Link>
+          <Link to="/about">ABOUT US</Link>
+          <Link to="/product">OUR PRODUCTS</Link>
+          <Link to="/services">OUR SERVICES</Link>
+          <Link to="/gallery">TIMBERS</Link>
+          <Link to="/cart" className="text-black">
+            View Cart
+          </Link>
         </div>
 
         <div
@@ -123,11 +132,11 @@ function Header() {
                 : "absolute flex top-16 h-f w-full bg-white text-white p-4 flex-col gap-3 -translate-y-12 duration-200 -z-10"
             }
           >
-          <Link to="/inquiryForm">
-          <button >Book Online</button>
-          </Link>
-          <button onClick={handleEmailClick}>By Email</button>
-          <button onClick={handleCallClick}>By Phone</button>
+            <Link to="/inquiryForm">
+              <button>Book Online</button>
+            </Link>
+            <button onClick={handleEmailClick}>By Email</button>
+            <button onClick={handleCallClick}>By Phone</button>
           </div>
         </div>
       </nav>
@@ -156,12 +165,12 @@ function Header() {
           </div>
 
           <div className="flex flex-col gap-5 items-center text-2xl py-8 h-full">
-          <Link to="/">HOME</Link>
-              <Link to="/about">ABOUT US</Link>
-              <Link to="/product">OUR PRODUCTS</Link>
-              <Link to="/services">OUR SERVICES</Link>
-              <Link to="/gallery">TIMBERS</Link>
-              <Link to="/cart" className="text-black">
+            <Link to="/">HOME</Link>
+            <Link to="/about">ABOUT US</Link>
+            <Link to="/product">OUR PRODUCTS</Link>
+            <Link to="/services">OUR SERVICES</Link>
+            <Link to="/gallery">TIMBERS</Link>
+            <Link to="/cart" className="text-black">
               View Cart
             </Link>
 
@@ -179,11 +188,11 @@ function Header() {
                     : "absolute top-16 h-f w-full bg-white text-black p-4 hidden flex-col gap-3 -translate-y-12 duration-200 -z-10"
                 }
               >
-              <Link to="/inquiryForm">
-              <button >Book Online</button>
-              </Link>
-              <button onClick={handleEmailClick}>By Email</button>
-              <button onClick={handleCallClick}>By Phone</button>
+                <Link to="/inquiryForm">
+                  <button>Book Online</button>
+                </Link>
+                <button onClick={handleEmailClick}>By Email</button>
+                <button onClick={handleCallClick}>By Phone</button>
               </div>
             </div>
           </div>
