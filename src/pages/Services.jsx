@@ -15,14 +15,14 @@ const destinationsData = [
       "Crafting bespoke wooden staircases that combine functionality and aesthetics. Our company specializes in creating custom staircases tailored to individual preferences and space requirements. From traditional to contemporary designs, our skilled craftsmen use high-quality wood to construct durable and visually stunning staircases, adding a touch of elegance to any home or commercial space.",
 
     imageUrl:
-      {wooden_flooring},
+      wooden_flooring,
   },
   {
     title: "Wooden Staircase",
     description:
       "Discover the timeless allure of our wooden flooring, meticulously curated to infuse your space with natural elegance. Crafted from premium hardwoods, each plank embodies exquisite craftsmanship and durability, celebrating the unique beauty of wood grains. With a diverse selection spanning classic oak, inviting cherry, and opulent maple, our collection caters to diverse tastes and styles. Embrace enduring sophistication that withstands the demands of daily life, whether adorning a cozy home or a bustling commercial environment. Not only does our flooring promise timeless appeal, but it also boasts ease of maintenance, offering a practical solution without compromising on its innate charm.",
     imageUrl:
-    {wooden_staircase},
+    wooden_staircase,
   },
   {
     title: "Custom Wood Furniture",
