@@ -43,11 +43,10 @@ export default function App() {
   }, []);
 
   return (
-    <BrowserRouter>
     <CartProvider>
       <ErrorBoundary>
         <Layout>
-         
+          <BrowserRouter>
             {isLoading ? (
               <Loading />
             ) : (
@@ -70,10 +69,9 @@ export default function App() {
                 <Route path="/about" element={<About />} />
               </Routes>
             )}
-          
+          </BrowserRouter>
         </Layout>
       </ErrorBoundary>
     </CartProvider>
-    </BrowserRouter>
   );
 }
