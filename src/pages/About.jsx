@@ -36,12 +36,12 @@ function About() {
 function Header() {
   const handleCallClick = () => {
     // Use the `window.location` to initiate a phone call to the mobile number
-    window.location.href = "tel:+918883226229"; // Replace with the desired mobile number
+    window.location.href = "tel:+917012862639"; // Replace with the desired mobile number
   };
 
   const handleEmailClick = () => {
     // Use the `window.location` to open the default email client
-    window.location.href = "mailto:angantrayabirdseye@gmail.com"; // Replace with the desired email address
+    window.location.href = "mailto:pnrwood82@gmail.com"; // Replace with the desired email address
   };
 
   const handleDestinationsClick = () => {

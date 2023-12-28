@@ -8,11 +8,11 @@ import Footer from "./Footer";
 
 function Header() {
   const handleCallClick = () => {
-    window.location.href = "tel:+918883226229";
+    window.location.href = "tel:+917012862639";
   };
 
   const handleEmailClick = () => {
-    window.location.href = "mailto:angantrayabirdseye@gmail.com";
+    window.location.href = "mailto:pnrwood82@gmail.com";
   };
 
   const handleDestinationsClick = () => {

@@ -47,26 +47,30 @@ function Footer() {
           <div className="flex flex-col gap-3">
             <h6 className="font-bold text-xl">Contact</h6>
             <div className="flex flex-col text-lg gap-3">
-              <a href="/partner">Partner with us</a>
+              <a href="/inquiryForm">Partner with us</a>
             </div>
             <div className="flex flex-col text-lg gap-3">
-              <a href="mailto:angantrayabirdseye@gmail.com">Careers</a>
+              <a href="mailto:pnrwood82@gmail.com">Careers</a>
             </div>
           </div>
           <div className="hidden md:flex flex-col gap-6">
             <h6 className="font-bold text-xl">Meet Us </h6> 
             
             <div className="flex flex-col text-lg gap-3">
-              <a href="tel:+916380726258">+91 6380726258 <br/> (24/7, 365 days) </a>
-              <a href="mailto:midlead@gmail.com">midlead@gmail.com</a>
+            <a href="#">Kajahussain AR PNR WOOD INDUSTRIES PALAKKAD 678012<br/>  </a>
+
+              <a href="tel:+917012862639">+91 7012862639 <br/> (24/7, 365 days) </a>
+              <a href="mailto:pnrwood82@gmail.com">pnrwood82@gmail.com</a>
             </div>
           </div>
         </div>
         <div className="md:hidden flex flex-col gap-6">
           <h6 className="font-bold text-xl">Meet Us</h6>
           <div className="flex flex-col text-lg gap-3">
-            <a href="tel:+916380726258">+916380726258(24/7, 365 days)</a>
-            <a href="mailto:midlead@gmail.com">midlead@gmail.com</a>
+          <a href="#">Kajahussain AR PNR WOOD INDUSTRIES PALAKKAD 678012<br/>  </a>
+
+          <a href="tel:+917012862639">+91 7012862639 <br/> (24/7, 365 days) </a>
+          <a href="mailto:pnrwood82@gmail.com">pnrwood82@gmail.com</a>
           </div>
         </div>
       </footer>
