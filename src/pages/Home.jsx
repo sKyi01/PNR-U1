@@ -271,7 +271,7 @@ function Destinations() {
         <div>
           {/* generate left arrow in fontawesome */}
           <Link
-            to="/Product"
+            to="/s"
             className="cursor-pointer h-12 w-12 bg-[#B45F06] rounded-full flex items-center justify-center shadow-xl link-style"
           >
             <i className="fa-solid fa-chevron-right text-white"></i>
