@@ -197,7 +197,7 @@ routes.post("/submit-order", async (req, res) => {
   console.log(req.body);
 
   const formData = req.body;
-  const orderDate = format(new Date(), "dd/MM/yyyy");
+  const orderDate = format(new Date(), "dd/MM/yyyy HH:mm");
 
   try {
     const transporter = nodemailer.createTransport({
@@ -261,7 +261,7 @@ routes.post("/submit-inquiry", async (req, res) => {
   console.log(req.body);
 
   const formData = req.body;
-  const inquiryDate = format(new Date(), "dd/MM/yyyy");
+  const inquiryDate = format(new Date(), "dd/MM/yyyy HH:mm");
 
   try {
     const transporter = nodemailer.createTransport({
@@ -288,7 +288,7 @@ routes.post("/submit-inquiry", async (req, res) => {
         States: ${formData.states}
         Country / Region: ${formData.countryRegion}
         Inquiry Notes: ${formData.orderNotes}
-        Inquiry Date : ${inquiryDate}
+        
       `,
     };
 
