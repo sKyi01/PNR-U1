@@ -19,7 +19,7 @@ function Footer() {
           </p>
           <div className="flex gap-5 justify-center md:justify-normal items-center mt-5 md:mt-0">
             <Link to="https://www.linkedin.com/company/psrwoods/">
-              <i className="fa-brands fa-facebook-in p-3 bg-[#2596BE] rounded-full text-white"></i>
+              <i className="fa-brands fa-facebook p-3 bg-[#2596BE] rounded-full text-white"></i>
             </Link>
             <Link to="https://www.instagram.com/psrwoods">
               <i className="fa-brands fa-instagram p-3 bg-[#2596BE] rounded-full text-white"></i>
@@ -57,7 +57,7 @@ function Footer() {
             <h6 className="font-bold text-xl">Meet Us </h6> 
             
             <div className="flex flex-col text-lg gap-3">
-            <a href="#">Kajahussain AR PNR WOOD INDUSTRIES PALAKKAD 678012<br/>  </a>
+            <p>Kajahussain AR PNR WOOD INDUSTRIES PALAKKAD 678012<br/>  </p>
 
               <a href="tel:+917012862639">+91 7012862639 <br/> (24/7, 365 days) </a>
               <a href="mailto:pnrwood82@gmail.com">pnrwood82@gmail.com</a>
