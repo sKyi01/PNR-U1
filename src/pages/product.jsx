@@ -12,7 +12,8 @@ import Header from "../constants/Header";
 import StaticCards from "./StaticCards";
 import "../css/globalcss.css";
 import Layout from "../constants/Layout";
-
+import imgPath from "../constants/ImgPath";
+import gcp_url from "../constants/GcpPath";
 
 function product() {
   const [products, setProducts] = useState([]);
