@@ -197,7 +197,7 @@ routes.post("/submit-order", async (req, res) => {
   console.log(req.body);
 
   const formData = req.body;
-  const orderDate = format(new Date(), "dd/MM/yyyy HH:mm", { timeZone: "Asia/Kolkata" });
+  const orderDate = format(new Date(), "dd/MM/yyyy");
 
   try {
     const transporter = nodemailer.createTransport({
@@ -261,7 +261,7 @@ routes.post("/submit-inquiry", async (req, res) => {
   console.log(req.body);
 
   const formData = req.body;
-  const inquiryDate = format(new Date(), "dd/MM/yyyy HH:mm", { timeZone: "Asia/Kolkata" }); // Setting the time zone to IST
+  const inquiryDate = format(new Date(), "dd/MM/yyyy");
 
   try {
     const transporter = nodemailer.createTransport({
