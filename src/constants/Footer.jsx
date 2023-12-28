@@ -19,7 +19,7 @@ function Footer() {
           </p>
           <div className="flex gap-5 justify-center md:justify-normal items-center mt-5 md:mt-0">
             <Link to="https://www.linkedin.com/company/psrwoods/">
-              <i className="fa-brands fa-linkedin-in p-3 bg-[#2596BE] rounded-full text-white"></i>
+              <i className="fa-brands fa-facebook-in p-3 bg-[#2596BE] rounded-full text-white"></i>
             </Link>
             <Link to="https://www.instagram.com/psrwoods">
               <i className="fa-brands fa-instagram p-3 bg-[#2596BE] rounded-full text-white"></i>
