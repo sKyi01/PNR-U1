@@ -40,24 +40,15 @@ function Header() {
         </Link>
         </div>
 
-        <div onClick={() => setEnquire(!enquire)} className="text-black  flex gap-2 relative">
-          <button>ENQUIRE NOW</button>
+        <div onClick={() => setEnquire(!enquire)} >
+          
           <div className="flex items-center">
-            <img src={line} alt="line1" />
           </div>
 
           <div
-          className={
-            enquire
-              ? "absolute top-0 h-f w-full bg-black text-white p-4 flex flex-col gap-3 translate-y-0 duration-200 z-20 overflow-y-auto"
-              : "absolute flex top-0 h-f w-full bg-white text-white p-4 flex-col gap-3 -translate-y-12 duration-200 -z-10"
-          }
+          
           >
-          <Link to="/inquiryForm">
-          <button className="text-center" >Book Online</button>
-          </Link>
-          <button onClick={handleEmailClick}>By Email</button>
-          <button onClick={handleCallClick}>By Phone</button>
+          
           </div>
         </div>
       </nav>
@@ -90,23 +81,13 @@ function Header() {
           </Link>
             <div
               onClick={() => setEnquire(!enquire)}
-              className="text-white flex gap-2 relative"
+              
             >
-              <button>ENQUIRE NOW</button>
-              <img src={line} alt="line" />
 
               <div
-              className={
-                enquire
-                  ? "absolute top-0 h-f w-full bg-black text-white p-4 flex flex-col gap-3 translate-y-0 duration-200 z-20 overflow-y-auto"
-                  : "absolute flex top-0 h-f w-full bg-white text-white p-4 flex-col gap-3 -translate-y-12 duration-200 -z-10"
-              }
+             
               >
-              <Link to="/inquiryForm">
-              <button className="text-center">Book Online</button>
-              </Link>
-              <button onClick={handleEmailClick}>By Email</button>
-              <button onClick={handleCallClick}>By Phone</button>
+              
               </div>
             </div>
           </div>

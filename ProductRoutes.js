@@ -261,7 +261,7 @@ routes.post("/submit-inquiry", async (req, res) => {
   console.log(req.body);
 
   const formData = req.body;
-  const inquiryDate = format(new Date(), "dd/MM/yyyy HH:mm");
+  const inquiryDate = format(new Date(), "dd/MM/yyyy");
 
   try {
     const transporter = nodemailer.createTransport({

@@ -35,6 +35,8 @@ const Cart = () => {
   return (
     <div>
     <Header />
+    <div>
+    
     <div className="container mt-5">
       <div className="d-flex justify-content-between mb-3 align-items-center">
         <div>
@@ -109,7 +111,9 @@ const Cart = () => {
         </div>
       )}
     </div>
-    <Footer/>
+  </div>
+  <Footer/>
+
   </div>
   
   );
