@@ -288,7 +288,7 @@ routes.post("/submit-inquiry", async (req, res) => {
         States: ${formData.states}
         Country / Region: ${formData.countryRegion}
         Inquiry Notes: ${formData.orderNotes}
-        
+        Inquiry Date : ${inquiryDate}
       `,
     };
 
