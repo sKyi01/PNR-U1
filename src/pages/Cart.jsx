@@ -4,6 +4,7 @@ import Header from "../constants/Header";
 import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingBag } from '@fortawesome/free-solid-svg-icons';
+import Footer from "../constants/Footer";
 
 const Cart = () => {
   const navigate = useNavigate(); // Change from useHistory to useNavigate
@@ -108,6 +109,7 @@ const Cart = () => {
         </div>
       )}
     </div>
+    <Footer/>
   </div>
   
   );

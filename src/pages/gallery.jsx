@@ -5,6 +5,12 @@ import { Parallax } from "react-parallax";
 import { Link } from "react-router-dom";
 import indiabg from "../assets/PNR/foest_psr.jpg";
 import "../css/globalcss.css"
+import babul from "../assets/Babul.jpg"
+import neem from "../assets/Neem.jpg"
+import kunnivaga from "../assets/Kunnivaga.jpg"
+import irul from "../assets/Irul.jpg"
+import marudhy from "../assets/Marudhy.jpg"
+import Footer from "../constants/Footer";
 
 function India() {
   function scrollToTop() {
@@ -176,57 +182,58 @@ function OurDestinations() {
       
     },
     {
-      name: "Kerala Neam Wood",
+      name: "Rose Wood",
       imageUrl:
-        "https://drive.google.com/uc?export=download&id=1FSla1JsjBle11O03plRFXRFl8Z-AY-4N",
+        "https://static.wixstatic.com/media/e77179_06184aa5fa9841a2ad0723f0e27354cb~mv2.png/v1/fill/w_556,h_295,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/e77179_06184aa5fa9841a2ad0723f0e27354cb~mv2.png",
       location: "Kerala, India, South Asia",
       
     },
     {
-      name: "Kerala Teak Wood",
+      name: " Mahogany",
       imageUrl:
-        "https://drive.google.com/uc?export=download&id=1FSla1JsjBle11O03plRFXRFl8Z-AY-4N",
+        "https://5.imimg.com/data5/LY/NU/KY/SELLER-20551331/mahogany-timber-wood-mahogany-wood-log.JPG",
       location: "Kerala, India, South Asia",
       
     },
     {
-      name: "Kerala Neam Wood",
+      name: "Marudhy",
       imageUrl:
-        "https://drive.google.com/uc?export=download&id=1FSla1JsjBle11O03plRFXRFl8Z-AY-4N",
+      marudhy,
       location: "Kerala, India, South Asia",
       
     },
     {
-      name: "Kerala Teak Wood",
+      name: "Irul Wood",
       imageUrl:
-        "https://drive.google.com/uc?export=download&id=1FSla1JsjBle11O03plRFXRFl8Z-AY-4N",
+      irul,
       location: "Kerala, India, South Asia",
       
     },
     {
-      name: "Kerala Neam Wood",
+      name: "Kuniivaga Wood",
       imageUrl:
-        "https://drive.google.com/uc?export=download&id=1FSla1JsjBle11O03plRFXRFl8Z-AY-4N",
+      kunnivaga,
       location: "Kerala, India, South Asia",
       
     },
     {
-      name: "Kerala Teak Wood",
+      name: "Kerala Neem Wood",
       imageUrl:
-        "https://drive.google.com/uc?export=download&id=1FSla1JsjBle11O03plRFXRFl8Z-AY-4N",
+      neem,
       location: "Kerala, India, South Asia",
      
     },
     {
-      name: "Kerala Neam Wood",
+      name: " Babul Wood",
       imageUrl:
-        "https://drive.google.com/uc?export=download&id=1FSla1JsjBle11O03plRFXRFl8Z-AY-4N",
+      babul,
       location: "Kerala, India, South Asia",
       
     },
   ];
 
   return (
+    <div>
     <div
       name="kenya"
       className="my-12 flex flex-col items-center justify-center text-black gap-12"
@@ -279,6 +286,8 @@ function OurDestinations() {
         </div>
         ))}
       </div>
+      </div>
+    <Footer/>
     </div>
   );
 }

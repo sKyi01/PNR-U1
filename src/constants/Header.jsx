@@ -47,14 +47,14 @@ function Header() {
           </div>
 
           <div
-            className={
-              enquire
-                ? "absolute top-16 h-f w-full bg-black text-white p-4 flex flex-col gap-3 translate-y-0 duration-200 z-20"
-                : "absolute flex top-16 h-f w-full bg-white text-white p-4 flex-col gap-3 -translate-y-12 duration-200 -z-10"
-            }
+          className={
+            enquire
+              ? "absolute top-0 h-f w-full bg-black text-white p-4 flex flex-col gap-3 translate-y-0 duration-200 z-20 overflow-y-auto"
+              : "absolute flex top-0 h-f w-full bg-white text-white p-4 flex-col gap-3 -translate-y-12 duration-200 -z-10"
+          }
           >
           <Link to="/inquiryForm">
-          <button >Book Online</button>
+          <button className="text-center" >Book Online</button>
           </Link>
           <button onClick={handleEmailClick}>By Email</button>
           <button onClick={handleCallClick}>By Phone</button>
@@ -96,14 +96,14 @@ function Header() {
               <img src={line} alt="line" />
 
               <div
-                className={
-                  enquire
-                    ? "absolute top-16 h-f w-full bg-white text-black p-4 flex flex-col gap-3 translate-y-0 duration-200"
-                    : "absolute top-16 h-f w-full bg-white text-black p-4 hidden flex-col gap-3 -translate-y-12 duration-200 -z-10"
-                }
+              className={
+                enquire
+                  ? "absolute top-0 h-f w-full bg-black text-white p-4 flex flex-col gap-3 translate-y-0 duration-200 z-20 overflow-y-auto"
+                  : "absolute flex top-0 h-f w-full bg-white text-white p-4 flex-col gap-3 -translate-y-12 duration-200 -z-10"
+              }
               >
               <Link to="/inquiryForm">
-              <button >Book Online</button>
+              <button className="text-center">Book Online</button>
               </Link>
               <button onClick={handleEmailClick}>By Email</button>
               <button onClick={handleCallClick}>By Phone</button>
