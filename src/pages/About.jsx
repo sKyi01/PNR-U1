@@ -206,47 +206,10 @@ function Section1() {
 
 function Section2() {
   return (
-    <section className="min-h-[60vh] about2 py-12 flex items-end text-white">
-      <div className="md:flex hidden w-full justify-center gap-4 z-10">
-        <p className="text-2xl font-noticia tracking-[3px]">India</p>
-        <p className="text-2xl font-noticia tracking-[3px] px-4 border-x border-white">
-        
-        </p>
-        <p className="text-2xl font-noticia tracking-[3px] px-4 border-r border-white">
-        
-        </p>
-        <p className="text-2xl font-noticia tracking-[3px] px-4 border-r border-white">
-          
-        </p>
-        <p className="text-2xl font-noticia tracking-[3px] px-4 border-r border-white">
-        
-        </p>
-        <p className="text-2xl font-noticia tracking-[3px] px-4 ">
-        
-        </p>
-      </div>
+    <section >
+     
 
-      <div className="flex md:hidden flex-col items-center w-full justify-center gap-4 z-10">
-        <p
-          className="text-2xl font-noticia tracking-[3px]
-        border-b"
-        >
-          ANDAMAN
-        </p>
-        <p className="text-2xl font-noticia tracking-[3px] px-4 border-b">
-          BHUTAN
-        </p>
-        <p className="text-2xl font-noticia tracking-[3px] px-4 border-b">
-          NEPAL
-        </p>
-        <p className="text-2xl font-noticia tracking-[3px] px-4">INDIA</p>
-        <p className="text-2xl font-noticia tracking-[3px] px-4 border-b">
-          LAKSHADWEEP
-        </p>
-        <p className="text-2xl font-noticia tracking-[3px] px-4 border-b">
-          KENYA
-        </p>
-      </div>
+      
     </section>
   );
 }
