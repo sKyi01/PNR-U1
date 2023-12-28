@@ -487,7 +487,7 @@ const Admin = () => {
                     <td>{order.states}</td>
                     <td>{order.countryRegion}</td>
                     <td>{order.orderNotes}</td>
-                    <td>{format(parse(order.orderAt, 'dd/MM/yyyy', new Date()), 'dd/MM/yyyy')}</td>
+                    <td>{format(parse(order.orderAt, 'dd/MM/yyyy', new Date()), 'dd/MM/yyyy HH:mm')}</td>
                     {/* ... (add more data cells as needed) */}
                   </tr>
                 ))}
