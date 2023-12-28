@@ -206,10 +206,32 @@ function Section1() {
 
 function Section2() {
   return (
-    <section >
-     
+    <section className="min-h-[60vh] about2 py-12 flex items-end text-white">
+      <div className="md:flex hidden w-full justify-center gap-4 z-10">
+       
+      </div>
 
-      
+      <div className="flex md:hidden flex-col items-center w-full justify-center gap-4 z-10">
+        <p
+          className="text-2xl font-noticia tracking-[3px]
+        border-b"
+        >
+          
+        </p>
+        <p className="text-2xl font-noticia tracking-[3px] px-4 border-b">
+          
+        </p>
+        <p className="text-2xl font-noticia tracking-[3px] px-4 border-b">
+          
+        </p>
+        <p className="text-2xl font-noticia tracking-[3px] px-4">INDIA</p>
+        <p className="text-2xl font-noticia tracking-[3px] px-4 border-b">
+          
+        </p>
+        <p className="text-2xl font-noticia tracking-[3px] px-4 border-b">
+          
+        </p>
+      </div>
     </section>
   );
 }
