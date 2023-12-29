@@ -7,7 +7,6 @@ import Order from "./models/orderSchema.js";
 import nodemailer from "nodemailer";
 import { format } from "date-fns-tz";
 
-//import keyFile from "file:///opt/render/project/src/mykey.json" assert { type: "json" };
 
 const routes = express.Router();
 
@@ -19,7 +18,7 @@ const storage = new Storage({
   projectId,
   keyFileName,
 });
-const bucket = storage.bucket("pnr-vercel"); // Replace with your actual bucket name
+const bucket = storage.bucket("midlead"); // Replace with your actual bucket name
 
 const upload = multer({
   storage: multer.memoryStorage(), // Store file in memory for processing
@@ -57,7 +56,7 @@ routes.post(
     console.log(username + " " + password);
 
     try {
-      if (username === "akash" && password === "sky") {
+      if (username === "pnrwood" && password === "pnr@123") {
         console.log("request is coming for create with condition");
 
         const newProduct = new Product(req.body);
@@ -124,7 +123,7 @@ routes.put('/updateProduct/:productId', upload.array('productImage', 5), async (
   const id = req.params.productId;
 
   try {
-    if (username === 'akash' && password === 'sky') {
+    if (username === 'pnrwood' && password === 'pnr@123') {
       const existingProduct = await Product.findById(id);
       if (!existingProduct) {
         return res.status(404).json({ message: 'Product not found' });

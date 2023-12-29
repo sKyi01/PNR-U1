@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "delta-album-409615",
+  "private_key_id": "fde45bf05b3d42c4ea7000beaab7c1c1a1fcc34f",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDKIZWkatbpAeqw\nlcq3lz+2Aljsg4UqGObNOZbMaQZKUmoJMkvS0C/uuZx9Cqya6qwjmpdGv3d/ffVl\neO2DwmfrFpJcM2E0Ika0ZkO3EPum9QdsGjPRYG3jerw4T1EgJLSRzej1Uayuf+c7\nDfHp8pMA49crxYBNcQvGLOObcSXPgu46xgju1ADH9D7FCvlXpVkpfVlMysm7TUWK\nYV2eEXxQKdWLEBXVIx8Q5uRrSR7/lEMobtkEt6PuZWSCDqardxk3FGS0KYBEUpwd\nXHZIf0xlxhvG8dSS2mkcjPfWZ5utcpNmsd+00Av+Vj3H1AYwjeAVJTofYAnsQe2m\nQ0GZ/w73AgMBAAECggEAT48ritVAtOL7wLic22ltetLutF1KF1lI0yNlPxzhjHRm\n5yrEXHx0OWcWeMMwUCOpULRC8eZf/y8RXXjdJ/znkUlHn4Hbsz0AjnYoFhDZtIwC\neWLQ3YsyhZSkLBfQKzI3XqJpHNIigWa3mW9yNi6z/OgxI7nvt8uUolK93cuJ4eSH\neIDfKS7gbvOveEI7rcce6M4/BT1YjMDQOJsVyqeG5OuNt4SvepcvdDTAOvgWyiLX\nSxtV96f/D4DWgoZN1t4RSo/1uxAmdxCkAuyqefsRAvInktnYMsVdltG6mAc2FVIw\nbHeFq48XGb0T+IS1RL6Adpu7M/eVQ/0V8o7S57eLwQKBgQD+QEYHRBHa9VvV14bl\nM6X6wCCIcYeieqZrGGwRFL9xtok3Oax+ks90nZdaZQlMDT2d8M494jC4aHB4XAQm\n+Evoh2ylRaMQsfWiZtNjLBLFZkzhH1fH6+FNZ9zW9dstVEa2SBrZG4RKKFbVsFrV\na0sg+Jk2uCFk4ksnYB0SWfR7twKBgQDLhYelgp/fkiLsQWSy7YpYeQBnP4XixQCe\nOIspGYGVNkvnbIXVmanIYMKkCyOHC0WRBunAbNhIEQkfgLclj8AILJqCzK6p0JZB\n2fpe1NC7b/Z8w8hJLISBTZeWMtjWIWUCiD+kSKd3GTASpzgHvoydhuIHPzj0r1o4\ngBGyR3SGwQKBgHvXbsTHQTM3492LN6eYurYiszYCpqBbwYfUw36mboHC+Z8utniI\npggVYs2i/R5QLL0ruCmobTbFmFLn7xXUR5Uhsafm/YB6Tj0mfLyHkTUZmUTmcWlt\n2bZMauNBqdqwfCj5gipSHuPINlOrrPLbaiLLNEXU9l8fYp/xTvfLXSyNAoGAAYmF\np8Nfz8F70AsCZrOSmu53CVCag0b3pTpKGspdhzH8ysewDxf1B1Vrwu9umkOEh/7k\nXxazX3/5cKp5N6hpS+aCWECRhSjVKbQqxvKWjQPgebrE1YCnk45xeanyp1NjPuym\nhmgiE602Br4Kl0xiJYJyTJm2pWp5pPmaqJ0PjUECgYEAl7f2FqIdgNEkRvvWBpfN\n6GmkFaeKBWOLVeG3CJXoCd1UaeZajIP/G9Yb7CwyuV9I3dhIJiXHfm2Nu3m6o8xK\niEf98YrZXHNnyvT3b9SbnUborcWHbUVPzcauB4jrXorWzZkL1B6AOGE6ugbu98Yl\ndGXG+EUD8M0Aymop0WFOG60=\n-----END PRIVATE KEY-----\n",
+  "client_email": "midlead@delta-album-409615.iam.gserviceaccount.com",
+  "client_id": "101083577671251370280",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/midlead%40delta-album-409615.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

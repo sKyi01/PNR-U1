@@ -134,7 +134,7 @@ const Admin = () => {
       return;
     }
 
-    if (password !== "sky") {
+    if (password !== "pnr@123") {
       console.log("Incorrect password");
       toast.error("Incorrect Password");
       return;
