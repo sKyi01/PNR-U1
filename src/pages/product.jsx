@@ -44,74 +44,64 @@ function product() {
 
   return (
     <div>
-      <Header />
-      <div className="">
-        <div className="container text-center  font-brush-script-mt text-6xl mb-5">
-          <p className="text-6xl bursh-font">Our Products</p>
-        </div>
-
-        <div className="flex flex-col min-h-screen bg-[#b9b3b324] md:px-20 py-24 justify-around">
-          <div className="">
-            <div className="row">
-              {Array.isArray(products) &&
-                products.map((product, index) => (
-                  <div key={index} className="col-md-4 mb-4">
-                    <div
-                      className="md:hover:scale-110 cursor-pointer duration-150 w-[400px] h-[600px] w-80 rounded-xl bg-white shadow-lg flex-col"
-                      style={{
-                        padding: "0px", // Adjust padding as needed
-                        margin: "20px",
-                        display: "flex",
-                        flexDirection: "column",
-                      }}
-                    >
-                      <Link
-                        to={`/productCard/${product._id}`}
-                        className="link-style"
-                        style={{ flex: "1", overflow: "hidden" }}
-                      >
-                        <div className="h-[60%] w-full rounded-t-xl">
-                          <img
-                            src={product.productImage[0]}
-                            alt="Product Image"
-                            className="w-full h-full object-cover rounded-t-xl img-fluid"
-                          />
-                        </div>
-
-                        <div
-                          className="flex flex-col p-12 gap-7"
-                          style={{ overflow: "hidden" }}
-                        >
-                          <h5 className="font-bold font-adanda text-2xl overflow-hidden">
-                            {product.productTitle}
-                          </h5>
-                          <p
-                            className="font-adanda overflow-hidden"
-                            style={{ flex: "1" }}
-                          >
-                            {product.productDescription.length > 100
-                              ? `${product.productDescription.substring(
-                                  0,
-                                  100
-                                )}...`
-                              : product.productDescription}
-                          </p>
-                          {product.productDescription.length > 100 && (
-                            <div className="text-black-500 cursor-pointer hover:underline">
-                              See More
-                            </div>
-                          )}
-                        </div>
-                      </Link>
-                    </div>
-                  </div>
-                ))}
-            </div>
-          </div>
-        </div>
-        <Footer />
+    <Header />
+    <div className="">
+      <div className="container text-center font-brush-script-mt text-6xl mb-5">
+        <p className="text-6xl bursh-font">Our Products</p>
       </div>
+  
+      <div className="flex flex-col min-h-screen px-4 md:px-10 lg:px-20 py-10 md:py-16 justify-around">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {Array.isArray(products) &&
+            products.map((product, index) => (
+              <div key={index} className="mb-4">
+                <div
+                  className="md:hover:scale-110 cursor-pointer duration-150 w-full md:w-[400px] h-[600px] rounded-xl bg-white shadow-lg flex-col mx-auto"
+                  style={{
+                    padding: "0px",
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
+                  <Link
+                    to={`/productCard/${product._id}`}
+                    className="link-style"
+                    style={{ flex: "1", overflow: "hidden" }}
+                  >
+                    <div className="h-[60%] w-full rounded-t-xl">
+                      <img
+                        src={product.productImage[0]}
+                        alt="Product Image"
+                        className="w-full h-full object-cover rounded-t-xl img-fluid"
+                      />
+                    </div>
+  
+                    <div className="flex flex-col p-4 md:p-12 gap-4 md:gap-7" style={{ overflow: "hidden" }}>
+                      <h5 className="font-bold font-adanda text-lg md:text-2xl overflow-hidden">
+                        {product.productTitle}
+                      </h5>
+                      <p className="font-adanda text-sm md:text-base overflow-hidden" style={{ flex: "1" }}>
+                        {product.productDescription.length > 100
+                          ? `${product.productDescription.substring(0, 100)}...`
+                          : product.productDescription}
+                      </p>
+                      {product.productDescription.length > 100 && (
+                        <div className="text-black-500 cursor-pointer hover:underline">
+                          See More
+                        </div>
+                      )}
+                    </div>
+                  </Link>
+                </div>
+              </div>
+            ))}
+        </div>
+      </div>
+      <Footer />
     </div>
+  </div>
+  
+  
   );
 }
 
