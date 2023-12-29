@@ -92,11 +92,20 @@ function Header() {
                 : "absolute flex top-16 h-f w-full bg-white text-black p-4 flex-col gap-3 -translate-y-12 duration-200 -z-10"
             }
           >
+          <div className="text-center">
           <Link to="/inquiryForm">
-                <button >Book Online</button>
-                </Link>
-            <button onClick={handleEmailClick}>By Email</button>
-            <button onClick={handleCallClick}>By Phone</button>
+          <button >Book Online</button>
+          </Link>
+          <br/>
+          <br/>
+  
+          <button onClick={handleEmailClick}>By Email</button>
+          <br/>
+          <br/>
+  
+  
+          <button onClick={handleCallClick}>By Phone</button>
+          </div>
           </div>
         </div>
       </nav>
@@ -138,9 +147,9 @@ function Header() {
               onClick={() => setEnquire(!enquire)}
               className="text-white flex gap-2 relative"
             >
-            <Link to="/checkoutForm">
+           
               <button>ENQUIRE NOW</button>
-               </Link>
+            
               <img src={line} alt="" />
 
               <div
@@ -152,11 +161,20 @@ function Header() {
               >
               
                
+              <div className="text-center">
               <Link to="/inquiryForm">
               <button >Book Online</button>
               </Link>
-                <button onClick={handleEmailClick}>By Email</button>
-            <button onClick={handleCallClick}>By Phone</button>
+              <br/>
+              <br/>
+      
+              <button onClick={handleEmailClick}>By Email</button>
+              <br/>
+              <br/>
+      
+      
+              <button onClick={handleCallClick}>By Phone</button>
+              </div>
                 
                
               </div>

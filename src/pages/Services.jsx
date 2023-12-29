@@ -111,7 +111,7 @@ function Header() {
           <Link to="/product">OUR PRODUCTS</Link>
           <Link to="/services">OUR SERVICES</Link>
           <Link to="/gallery">TIMBERS</Link>
-          <Link to="/cart" className="text-black">
+          <Link to="/cart" className="text-black view-cart-button">
             View Cart
           </Link>
         </div>
@@ -132,11 +132,20 @@ function Header() {
                 : "absolute flex top-16 h-f w-full bg-white text-white p-4 flex-col gap-3 -translate-y-12 duration-200 -z-10"
             }
           >
-            <Link to="/inquiryForm">
-              <button>Book Online</button>
-            </Link>
-            <button onClick={handleEmailClick}>By Email</button>
-            <button onClick={handleCallClick}>By Phone</button>
+          <div className="text-center">
+          <Link to="/inquiryForm">
+          <button >Book Online</button>
+          </Link>
+          <br/>
+          <br/>
+  
+          <button onClick={handleEmailClick}>By Email</button>
+          <br/>
+          <br/>
+  
+  
+          <button onClick={handleCallClick}>By Phone</button>
+          </div>
           </div>
         </div>
       </nav>
@@ -170,7 +179,7 @@ function Header() {
             <Link to="/product">OUR PRODUCTS</Link>
             <Link to="/services">OUR SERVICES</Link>
             <Link to="/gallery">TIMBERS</Link>
-            <Link to="/cart" className="text-black">
+            <Link to="/cart" className="text-black view-cart-button">
               View Cart
             </Link>
 
@@ -188,11 +197,20 @@ function Header() {
                     : "absolute top-16 h-f w-full bg-white text-black p-4 hidden flex-col gap-3 -translate-y-12 duration-200 -z-10"
                 }
               >
-                <Link to="/inquiryForm">
-                  <button>Book Online</button>
-                </Link>
-                <button onClick={handleEmailClick}>By Email</button>
-                <button onClick={handleCallClick}>By Phone</button>
+              <div className="text-center">
+            <Link to="/inquiryForm">
+            <button >Book Online</button>
+            </Link>
+            <br/>
+            <br/>
+    
+            <button onClick={handleEmailClick}>By Email</button>
+            <br/>
+            <br/>
+    
+    
+            <button onClick={handleCallClick}>By Phone</button>
+            </div>
               </div>
             </div>
           </div>

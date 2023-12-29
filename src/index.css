@@ -263,3 +263,14 @@ input[type="number"]::-webkit-outer-spin-button {
   background-position: center;
   background-size: cover;
 }
+
+
+.view-cart-button {
+  
+}
+
+@media (max-width: 767px) {
+  .view-cart-button {
+    color: white; 
+  }
+}

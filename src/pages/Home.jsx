@@ -113,11 +113,20 @@ function Header() {
                   : "absolute top-16 h-f w-full bg-white text-black p-4 flex flex-col gap-3 -translate-y-12 duration-200 -z-10"
               }
             >
+            <div className="text-center">
             <Link to="/inquiryForm">
-              <button >Book Online</button>
-              </Link>
-              <button onClick={handleEmailClick}>By Email</button>
-              <button onClick={handleCallClick}>By Phone</button>
+            <button >Book Online</button>
+            </Link>
+            <br/>
+            <br/>
+
+            <button onClick={handleEmailClick}>By Email</button>
+            <br/>
+            <br/>
+
+
+            <button onClick={handleCallClick}>By Phone</button>
+            </div>
             </div>
           </div>
         </nav>
@@ -175,11 +184,20 @@ function Header() {
                       : "absolute top-16 h-f w-full bg-white text-black p-4 hidden flex-col gap-3 -translate-y-12 duration-200 -z-10"
                   }
                 >
+                <div className="text-center">
                 <Link to="/inquiryForm">
                 <button >Book Online</button>
                 </Link>
+                <br/>
+                <br/>
+
                 <button onClick={handleEmailClick}>By Email</button>
+                <br/>
+                <br/>
+
+
                 <button onClick={handleCallClick}>By Phone</button>
+                </div>
                 </div>
               </div>
             </div>
