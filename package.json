@@ -1,7 +1,7 @@
 {
     "name": "merge-skoda",
     "private": true,
-    "homepage": "https://pnr.onrender.com",
+    "homepage": "https://pnrwood.com",
     "version": "0.0.0",
     "type": "module",
     "workspaces": [

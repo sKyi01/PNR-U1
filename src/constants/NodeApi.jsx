@@ -1,2 +1,2 @@
-const base_url = "https://pnr.onrender.com/api/admin/product";
+const base_url = "https://pnrwood.com/api/admin/product";
 export default base_url;
