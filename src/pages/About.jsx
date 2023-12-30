@@ -242,7 +242,7 @@ function Section2() {
         <p className="text-2xl font-noticia tracking-[3px] px-4 border-b">
           
         </p>
-        <p className="text-2xl font-noticia tracking-[3px] px-4">INDIA</p>
+        <p className="text-2xl font-noticia tracking-[3px] px-4"></p>
         <p className="text-2xl font-noticia tracking-[3px] px-4 border-b">
           
         </p>
