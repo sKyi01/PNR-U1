@@ -12,6 +12,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import {Link} from 'react-router-dom'
 import gcp_url from '../constants/GcpPath';
+import "../css/globalcss.css";
 
 const ProductCard = () => {
   const { productId } = useParams();
@@ -115,10 +116,10 @@ const ProductCard = () => {
                     <p className='font-weight-normal'>{product.productDescription}</p>
                   </div>
                   
-                  <div className="purchase-button-container">
+                  <div className="purchase-button-container ">
                   <button
-                    className={` text-white p-3 rounded-lg ${addedToCart ? 'added' : ''}`}
-                    style={{ border: "1px solid #634b29", fontSize: "18px", color:"#C0392B" }}
+                    className={` text-white addtocart   p-3 rounded-lg ${addedToCart ? 'added' : ''}`}
+                    style={{ border: "1px solid #634b29", fontSize: "18px", backgroundColor:"#CA6F1E" }}
                     onClick={() => handleAddToCart(product)}
                     disabled={addedToCart}
                   >
@@ -126,7 +127,6 @@ const ProductCard = () => {
                   </button>
                 </div>
                 
-                  
                 </div>
               </div>
             </div>

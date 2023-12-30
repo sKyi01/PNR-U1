@@ -73,6 +73,8 @@
 .purchase-button-container {
   margin-top: 20px; /* Adjust the margin as needed */
 }
+.purchase-button-container :hover {
+}
 
 
 .font-casual-scripts {
@@ -129,3 +131,9 @@
  
   
 }
+.addtocart:hover {
+  transform: scale(1.1); /* Adjust the scaling factor based on your preference */
+  transition: transform 0.3s ease; /* Add a transition for a smooth effect */
+  
+}
+
