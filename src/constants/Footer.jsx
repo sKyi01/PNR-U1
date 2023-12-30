@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <div>
+    <div className="mview">
       {" "}
       <footer className="flex flex-col md:flex-row text-center mt-11 gap-6 md:gap-44">
         {" "}

@@ -216,7 +216,7 @@ function Header() {
 function Explore() {
   return (
     <section className="min-h-screen py-10 explore flex items-center flex-col md:flex-row md:text-left text-center w-auto md:min-w-[70%] mx-auto justify-around">
-      <div className="flex flex-col gap-14 text-left">
+      <div className="flex flex-col gap-14 text-left mview">
         <div>
           <button className="p-4 px-7 font-bold rounded-full bg-white shadow-xl flex gap-4 ">
             <br />

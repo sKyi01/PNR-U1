@@ -37,7 +37,7 @@ const Cart = () => {
     <Header />
     <div>
     
-    <div className="container mt-5">
+    <div className="container mt-5" style={{height:"900px"}}>
       <div className="d-flex justify-content-between mb-3 align-items-center">
         <div>
           
@@ -57,7 +57,7 @@ const Cart = () => {
       </div>
       <h2 className="mb-4 bursh-font mt-5" style={{fontSize:"50px"}}>Your Cart</h2>
       {cart.length === 0 ? (
-        <p>Your cart is empty</p>
+        <p style={{color:"red"}}>Your cart is empty</p>
       ) : (
         <div className="row">
           {cart.map((product) => (

@@ -99,7 +99,11 @@ const ProductCard = () => {
               <div className='col-md-5'>
                 {/* Text Content */}
                 <div className='card-body d-flex flex-column'>
-                  <h2 className='card-title font-weight-bold text-3xl mb-4' style={{fontSize:"30px",fontFamily:"sans-serif"}}>{product.productTitle}</h2>
+                  <h2 className='card-title font-weight-bold text-3xl mb-4' style={{fontSize:"30px",fontFamily: "Times New Roman"}}>{product.productTitle}</h2>
+                  <div className='mb-3'>
+                  <p style={{ fontSize: '1rem', fontWeight: 'normal',color:"#28B463"}}><b>{product.productAvailability}</b></p>
+                </div>
+                  
                   <div className='mb-3'>
                     <p style={{ fontSize: '1rem', fontWeight: 'normal',color:"GrayText"}}><b>PID#</b>{product.productId}</p>
                   </div>

@@ -1,7 +1,7 @@
 {
     "name": "merge-skoda",
     "private": true,
-    "homepage": "https://pnr-two.vercel.app",
+    "homepage": "https://pnr.onrender.com",
     "version": "0.0.0",
     "type": "module",
     "workspaces": [
