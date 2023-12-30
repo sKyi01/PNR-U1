@@ -202,13 +202,13 @@ routes.post("/submit-order", async (req, res) => {
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: "pnrwood82@gmail.com",
-        pass: "utnc wlsc snox jmfk",
+        user: "pnrwoodform@gmail.com",
+        pass: "kteh xhkt nhjd rqmw",
       },
     });
 
     const mailOptions = {
-      to: "pnrwood82@gmail.com",
+      to: "pnrwoodform@gmail.com",
       subject: `New Order Submission - ${formData.firstName} ${formData.lastName}`,
       text: `
         
@@ -266,13 +266,13 @@ routes.post("/submit-inquiry", async (req, res) => {
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: "pnrwood82@gmail.com",
-        pass: "utnc wlsc snox jmfk",
+        user: "pnrwoodform@gmail.com",
+        pass: "kteh xhkt nhjd rqmw",
       },
     });
 
     const mailOptions = {
-      to: "pnrwood82@gmail.com",
+      to: "pnrwoodform@gmail.com",
       subject: `New Inquiry - ${formData.firstName} ${formData.lastName}`,
       text: `
         

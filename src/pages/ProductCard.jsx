@@ -116,15 +116,16 @@ const ProductCard = () => {
                   </div>
                   
                   <div className="purchase-button-container">
-                    <button
-                      className={`bg-blue-500 text-white p-2 rounded ${addedToCart ? 'added' : ''}`}
-                      onClick={() => handleAddToCart(product)}
-                      disabled={addedToCart}
-                    >
-                      {addedToCart ? 'Added' : 'Add to Cart'}
-                    </button>
-                 
-                  </div>
+                  <button
+                    className={` text-white p-3 rounded-lg ${addedToCart ? 'added' : ''}`}
+                    style={{ border: "1px solid #634b29", fontSize: "18px", color:"#C0392B" }}
+                    onClick={() => handleAddToCart(product)}
+                    disabled={addedToCart}
+                  >
+                    {addedToCart ? 'Added' : 'Add to Cart'}
+                  </button>
+                </div>
+                
                   
                 </div>
               </div>
