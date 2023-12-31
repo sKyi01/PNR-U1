@@ -14,31 +14,64 @@ import "../css/globalcss.css";
 import Layout from "../constants/Layout";
 import imgPath from "../constants/ImgPath";
 import gcp_url from "../constants/GcpPath";
+import { debounce } from "lodash";
+
 
 function product() {
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 9;
 
-  // function to call api method
-  const getAllCoursesFromServer = () => {
+  const getAllCoursesFromServer = debounce(() => {
+    setLoading(true); // Set loading to true when starting to fetch data
     axios.get(`${base_url}/getAllProduct`).then(
       (response) => {
         setProducts(response.data);
+        setLoading(false);
         console.log("Fetched products:", response.data);
       },
       (error) => {
         toast.error("Something went wrong", { position: "bottom-center" });
+        setLoading(false);
       }
     );
-  };
+  }, 500);
 
   useEffect(() => {
     getAllCoursesFromServer();
-  }, []); // Empty dependency array to run the effect only once
+  }, []);
 
-  // Log the updated state inside the useEffect hook
   useEffect(() => {
-    console.log("Updated state : ", products);
+    console.log("Updated state: ", products);
   }, [products]);
+
+  const handleScroll = debounce(() => {
+    if (
+      window.innerHeight + document.documentElement.scrollTop ===
+      document.documentElement.offsetHeight
+    ) {
+      // User has scrolled to the bottom
+      loadMoreItems();
+    }
+  }, 500);
+
+  const loadMoreItems = () => {
+    setCurrentPage((prevPage) => prevPage + 1);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [handleScroll]);
+
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = products.slice(indexOfFirstItem, indexOfLastItem);
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   /*this is main products card */
 
@@ -96,9 +129,19 @@ function product() {
               </div>
             ))}
         </div>
+         {/* Loading Spinner */}
+         {loading && <div className="loading-spinner"></div>}
+         {/* Pagination */}
+         <div className="pagination">
+           {Array.from({ length: Math.ceil(products.length / itemsPerPage) }).map((_, index) => (
+             <button key={index} onClick={() => paginate(index + 1)}>
+               {index + 1}
+             </button>
+           ))}
       </div>
       <Footer />
     </div>
+  </div>
   </div>
   
   
